@@ -1,4 +1,3 @@
-import React from 'react'
 import Navbar from "../../components/Navbar/Navbar"
 import PanelList from "../../components/PanelList/PanelList"
 import Chat from './Chat/Chat'

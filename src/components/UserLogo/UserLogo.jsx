@@ -1,8 +1,8 @@
-import React from 'react'
-
-const UserLogo = () => {
+const UserLogo = ({ stylesWrapper, stylesImg, SrcImg }) => {
   return (
-    <div>UserLogo</div>
+    <div className={`${stylesWrapper}`}>
+      <img src={SrcImg} alt="user-avatar" className={`rounded-full p-[2px] border-2 border-black/[.0] hover:border-green ${stylesImg}`} />
+    </div>
   )
 }
 

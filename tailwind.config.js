@@ -20,14 +20,8 @@ module.exports = {
       },
       colors: {
         green: "#27AE60",
-        blue: "#2D9CDB"
+        myblue: "#2D9CDB"
       },
-      // fontWeight: {
-      //   lightasdasd: 300,
-      //   normal: 400,
-      //   medium: 500,
-      //   bold: 700,
-      // }
     },
   },
   plugins: [],

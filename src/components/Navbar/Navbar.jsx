@@ -1,17 +1,15 @@
-import React from 'react'
+import UserLogo from '../UserLogo/UserLogo'
 import logo from "../../assets/Images/logo.svg"
 import userAvatar from "../../assets/Images/userAvatar.avif"
 
 const Navbar = () => {
   return (
-    <div className='bg-white w-[54px]'>
+    <div className='bg-white w-20'>
       <div className='mx-[11px] mt-[27px] border-b border-black/[.1]'>
-        <div>
-          <img src={logo} alt="Logo" />
+        <div className='flex justify-center items-center'>
+          <img src={logo} alt="Logo" className="w-4/6" />
         </div>
-        <div className='mt-5 pb-[23px]'>
-          <img src={userAvatar} alt="user-avatar" className='rounded-full' />
-        </div>
+        <UserLogo stylesWrapper={"mt-7 pb-[23px]"} SrcImg={userAvatar} />
       </div>
     </div>
   )

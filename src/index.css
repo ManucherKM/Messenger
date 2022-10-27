@@ -2,7 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer {}
+@layer components {
+    .title {
+        @apply text-4xl font-bold
+    }
+
+    .subtitle {
+        @apply text-lg font-normal
+    }
+}
 
 * {
     font-family: 'SF Pro Text';
