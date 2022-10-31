@@ -5,18 +5,16 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    screens: {
-      "lg": { max: "992px" },
-      "md": { max: "768px" },
-      "sm": { max: "480px" },
-    },
     container: {
       padding: "20px",
       center: true
     },
     extend: {
       screens: {
-        "dek": { max: "1100px" }
+        "desk": { max: "1200px" },
+        "tabl": { max: "992px" },
+        "mint": { max: "768px" },
+        "phon": { max: "480px" },
       },
       colors: {
         green: "#27AE60",
