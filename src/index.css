@@ -4,11 +4,11 @@
 
 @layer components {
     .title {
-        @apply text-4xl font-bold cursor-default mint:text-3xl
+        @apply text-4xl font-bold cursor-default mint:text-3xl dark:text-white
     }
 
     .subtitle {
-        @apply text-lg font-normal cursor-default
+        @apply text-lg font-normal cursor-default dark:text-white
     }
 }
 

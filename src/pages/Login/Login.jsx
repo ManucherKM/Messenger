@@ -6,8 +6,9 @@ import Spinner from "../../components/Spinner/Spinner"
 import * as validator from "../../utils/validator"
 import googleLogo from "../../assets/Images/google.svg"
 import vkLogo from "../../assets/Images/vk.svg"
+import { observer } from "mobx-react-lite"
 
-const Login = () => {
+const Login = observer(() => {
   const [loading, setLoading] = useState(false)
 
   let isEmail = false
@@ -19,7 +20,7 @@ const Login = () => {
       setEmailErrors([])
       isEmail = true
     }
-    setStyleEmail(isEmail ? "w-full rounded-xl border-green" : "w-full rounded-xl border-red-400")
+    setStyleEmail(isEmail ? "w-full rounded-xl border-green dark:border-green" : "w-full rounded-xl border-red-400 dark:border-red-400")
     setEmailErrors(validator.email(val).errors);
   }
 
@@ -33,12 +34,12 @@ const Login = () => {
       isPassword = true
     }
     setPasswordErrors(validator.password(val).errors)
-    setStylePassword(isPassword ? "w-full rounded-xl border-green" : "w-full rounded-xl border-red-400")
+    setStylePassword(isPassword ? "w-full rounded-xl border-green dark:border-green" : "w-full rounded-xl border-red-400 dark:border-red-400")
   }
 
 
   function login() {
-    console.log("Логин");
+    console.log("Вход");
   }
 
   function google() {
@@ -50,7 +51,7 @@ const Login = () => {
   }
 
   return (
-    <div className="w-[100vw] h-[100vh] flex items-center justify-center">
+    <div className="w-[100vw] h-[100vh] flex items-center justify-center bg-white dark:bg-dark">
       {loading && < Spinner />}
       {!loading &&
         <div className="container flex items-center justify-center">
@@ -69,7 +70,7 @@ const Login = () => {
                   <Input id={"password"} click={password} type="password" placeholder="Пароль" styles={stylePassword} />
                 </label>
               </div>
-              <Button text={"Войти"} click={login} type={"submit"} />
+              <Button text={"Вход"} click={login} type={"submit"} />
             </form>
             <div className="flex justify-center my-5">
               <span className="subtitle text-green">или</span>
@@ -78,13 +79,13 @@ const Login = () => {
               <AuthBtn click={google} text={"Войти с помощью Google"} logo={googleLogo} styleWrapper={"bg-white"} styleText={"text-black"} />
             </div>
             <div className="mt-3">
-              <AuthBtn click={vk} text={"Войти с помощью VK"} logo={vkLogo} styleWrapper={"bg-[#0077FF]"} styleText={""} />
+              <AuthBtn click={vk} text={"Войти с помощью VK"} logo={vkLogo} styleWrapper={"bg-[#0077FF] border-none"} styleText={""} />
             </div>
           </div>
         </div>
       }
-    </div >
+    </div>
   )
-}
+})
 
 export default Login

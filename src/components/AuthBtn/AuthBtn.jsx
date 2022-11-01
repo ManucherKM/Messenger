@@ -1,4 +1,3 @@
-
 const AuthBtn = ({ click, logo, text, styleWrapper, styleText }) => {
     function auth() {
         click()

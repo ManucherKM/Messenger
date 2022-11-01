@@ -2,12 +2,13 @@ import { useState } from "react"
 import AuthBtn from "../../components/AuthBtn/AuthBtn"
 import Input from "../../components/Input/Input"
 import Button from "../../components/Button/Button"
+import Spinner from "../../components/Spinner/Spinner"
 import * as validator from "../../utils/validator"
 import googleLogo from "../../assets/Images/google.svg"
 import vkLogo from "../../assets/Images/vk.svg"
-import Spinner from "../../components/Spinner/Spinner"
+import { observer } from "mobx-react-lite"
 
-const Register = () => {
+const Register = observer(() => {
   const [loading, setLoading] = useState(false)
 
   let isEmail = false
@@ -19,7 +20,7 @@ const Register = () => {
       setEmailErrors([])
       isEmail = true
     }
-    setStyleEmail(isEmail ? "w-full rounded-xl border-green" : "w-full rounded-xl border-red-400")
+    setStyleEmail(isEmail ? "w-full rounded-xl border-green dark:border-green" : "w-full rounded-xl border-red-400 dark:border-red-400")
     setEmailErrors(validator.email(val).errors);
   }
 
@@ -33,7 +34,7 @@ const Register = () => {
       isPassword = true
     }
     setPasswordErrors(validator.password(val).errors)
-    setStylePassword(isPassword ? "w-full rounded-xl border-green" : "w-full rounded-xl border-red-400")
+    setStylePassword(isPassword ? "w-full rounded-xl border-green dark:border-green" : "w-full rounded-xl border-red-400 dark:border-red-400")
   }
 
 
@@ -50,7 +51,7 @@ const Register = () => {
   }
 
   return (
-    <div className="w-[100vw] h-[100vh] flex items-center justify-center">
+    <div className="w-[100vw] h-[100vh] flex items-center justify-center bg-white dark:bg-dark">
       {loading && < Spinner />}
       {!loading &&
         <div className="container flex items-center justify-center">
@@ -78,13 +79,13 @@ const Register = () => {
               <AuthBtn click={google} text={"Войти с помощью Google"} logo={googleLogo} styleWrapper={"bg-white"} styleText={"text-black"} />
             </div>
             <div className="mt-3">
-              <AuthBtn click={vk} text={"Войти с помощью VK"} logo={vkLogo} styleWrapper={"bg-[#0077FF]"} styleText={""} />
+              <AuthBtn click={vk} text={"Войти с помощью VK"} logo={vkLogo} styleWrapper={"bg-[#0077FF] border-none"} styleText={""} />
             </div>
           </div>
         </div>
       }
     </div>
   )
-}
+})
 
 export default Register
