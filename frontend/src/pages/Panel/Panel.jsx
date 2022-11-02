@@ -4,7 +4,7 @@ import Chat from './Chat/Chat'
 
 const Panel = () => {
   return (
-    <div className='flex'>
+    <div className="flex">
       <Navbar />
       <div className='flex'>
         <PanelList />

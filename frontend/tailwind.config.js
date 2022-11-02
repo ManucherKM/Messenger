@@ -21,7 +21,9 @@ module.exports = {
         green: "#27AE60",
         myblue: "#2D9CDB",
         dark: "#16171B",
-        whiteDark: "#202125"
+        whiteDark: "#292B30",
+        grayInputs: "#EEEEEE",
+        grayMessage: "#F4F4F7"
       },
     },
   },

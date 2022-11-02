@@ -10,6 +10,7 @@
     .subtitle {
         @apply text-lg font-normal cursor-default dark:text-white
     }
+
 }
 
 * {
@@ -42,4 +43,8 @@
     src: url('./assets/Fonts/SF-bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
+}
+
+.btn-nav:hover .navbar-path {
+    fill: white;
 }

@@ -7,7 +7,7 @@ import checkTheme from './utils/themeCheck'
 const App = () => {
   checkTheme()
   return (
-    <div>
+    <div className='flex'>
       <Routes>
         <Route path='/panel' element={<Panel />} />
         <Route path='/' element={<Login />} />
