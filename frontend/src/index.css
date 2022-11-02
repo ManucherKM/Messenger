@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .title {
+        @apply text-4xl font-bold cursor-default mint:text-3xl dark:text-white
+    }
+
+    .subtitle {
+        @apply text-lg font-normal cursor-default dark:text-white
+    }
+}
+
+* {
+    font-family: 'SF Pro Text';
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('./assets/Fonts/SF-light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('./assets/Fonts/SF-regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('./assets/Fonts/SF-medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('./assets/Fonts/SF-bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
