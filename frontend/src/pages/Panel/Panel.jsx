@@ -6,7 +6,7 @@ const Panel = () => {
   return (
     <div className="flex">
       <Navbar />
-      <div className='flex'>
+      <div className='flex w-[calc(100vw-80px)]'>
         <PanelList />
         <Chat />
       </div>

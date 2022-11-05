@@ -1,7 +1,8 @@
-
 const Chat = () => {
   return (
-    <div className='bg-blue'>Chat</div>
+    <div className='bg-blue w-3/4'>
+      1
+    </div>
   )
 }
 

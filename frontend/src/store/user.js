@@ -14,11 +14,21 @@ class User {
         makeAutoObservable(this)
     }
 
-    login(data) {
+    login(obj) {
+
+        /*
+        Тут нужно будет отправить запрос на бекенд
+        */
+
         this.config = { ...data }
     }
 
     logout() {
+
+        /*
+        Тут нужно будет отправить запрос на бекенд
+        */
+
         this.config = {
             register: false,
             info: {}
