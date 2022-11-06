@@ -1,6 +1,6 @@
 const Chat = () => {
   return (
-    <div className='bg-blue w-3/4'>
+    <div className='bg-blue w-3/4 h-[100vh]'>
       1
     </div>
   )

@@ -61,13 +61,13 @@ const Login = observer(() => {
               <div>
                 <label htmlFor="email">
                   {emailErorrs && <p className="mb-2 text-red-400">{emailErorrs[0]}</p>}
-                  <Input id={"email"} click={email} type="text" placeholder="Почта" styles={styleEmail} />
+                  <Input id={"email"} func={email} type="text" placeholder="Почта" styles={styleEmail} />
                 </label>
               </div>
               <div className="mt-5">
                 <label htmlFor="password">
                   {passwordErorrs && <p className="mb-2 text-red-400">{passwordErorrs[0]}</p>}
-                  <Input id={"password"} click={password} type="password" placeholder="Пароль" styles={stylePassword} />
+                  <Input id={"password"} func={password} type="password" placeholder="Пароль" styles={stylePassword} />
                 </label>
               </div>
               <Button text={"Вход"} click={login} type={"submit"} />
