@@ -41,8 +41,8 @@ const PanelList = observer(() => {
     }
 
     //При клике на сообщение
-    function clickMessage() {
-        console.log(123);
+    function clickMessage(obj) {
+        chatController.updateChatRender(obj)
     }
 
     //При потере курсора label
@@ -111,7 +111,7 @@ const PanelList = observer(() => {
                     <div className="mt-5 scroll overflow-auto h-[calc(100vh-185px)]">
                         {!notFound && listChats.map(item =>
                             <div
-                                onClick={clickMessage}
+                                onClick={() => clickMessage(item)}
                                 key={item.chatId}
                                 className="py-3 px-5 cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-600"
                             >

@@ -5,6 +5,7 @@ class chatController {
     chats = [
         {
             chatId: 1,
+            friendId: 2,
             info: {
                 isTyping: false,
                 isCheckFriend: false,
@@ -15,7 +16,29 @@ class chatController {
                 name: "I am",
                 visibleMessage: "How are you doing?",
                 urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
-                noCheck: 5
+                noCheck: 5,
+                messages: [
+                    {
+                        messageId: 1,
+                        user: true,
+                        message: "JLKJDSFJBNKJHGDSFUIHENJNBKUHJSDJFbn"
+                    },
+                    {
+                        messageId: 2,
+                        user: false,
+                        message: "JLKJDSFJBNKJHGDSFUIHENJNBKUHJSDJFbn"
+                    },
+                    {
+                        messageId: 3,
+                        user: true,
+                        message: "JLKJDSFJBNKJHGDSFUIHENJNBKUHJSDJFbn"
+                    },
+                    {
+                        messageId: 4,
+                        user: false,
+                        message: "JLKJDSFJBNKJHGDSFUIHENJNBKUHJSDJFbn"
+                    },
+                ]
             }
         },
         {
@@ -215,6 +238,8 @@ class chatController {
         }
     ]
 
+    chatRender = {}
+
     workerChats = [...this.chats]
 
     constructor() {
@@ -246,6 +271,10 @@ class chatController {
                 return isMilsecA - isMilsecB
             })
         }
+    }
+
+    updateChatRender(obj) {
+        this.chatRender = {...obj}
     }
 }
 

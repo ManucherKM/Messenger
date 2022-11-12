@@ -1,14 +1,20 @@
 //Библиотеки
 import { Link } from "react-router-dom"
+import { observer } from "mobx-react-lite"
 
 //Компоненты
 import UserLogo from "../../UserLogo/UserLogo"
 
 //Изображения
 import logo from "../../../assets/Images/logo.svg"
-import userAvatar from "../../../assets/Images/userAvatar.avif"
 
-const NavigateTop = () => {
+//Утилиты
+import userControll from "../../../store/user"
+
+const NavigateTop = observer(() => {
+
+    const userAvatar = userControll.config.info.avatar
+
     return (
         <div className='mx-[11px] mt-[27px] border-b border-black/[.1] dark:border-white/[.3]'>
             <div className='flex-center cursor-pointer'>
@@ -30,6 +36,6 @@ const NavigateTop = () => {
             />
         </div>
     )
-}
+})
 
 export default NavigateTop

@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div className='flex'>
       <Routes>
-        <Route path='/panel' element={<Panel />} />
+        <Route path='/panel/chat' element={<Panel />} />
         <Route path='/' element={<Login />} />
         <Route path='/register' element={<Register />} />
       </Routes>

@@ -20,7 +20,7 @@ class User {
         Тут нужно будет отправить запрос на бекенд
         */
 
-        this.config = { ...data }
+        this.config = { ...obj }
     }
 
     logout() {

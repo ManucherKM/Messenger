@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar/Navbar"
 //Список сообщений
 import PanelList from "./PanelList/PanelList"
 
-//Чат
+//Компоненты
 import Chat from './Chat/Chat'
 
 const Panel = () => {
@@ -12,7 +12,9 @@ const Panel = () => {
     <div className="flex">
       <Navbar />
       <div className='flex w-[calc(100vw-80px)]'>
-        <PanelList />
+        <div className="border-r">
+          <PanelList />
+        </div>
         <Chat />
       </div>
     </div>
