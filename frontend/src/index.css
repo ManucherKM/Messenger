@@ -53,6 +53,14 @@ body {
     fill: white;
 }
 
+.cameraChat:hover .cameraSvgChat{
+    fill: #27AE60
+}
+
+.infoChat:hover .infoSvgChat{
+    fill: #27AE60
+}
+
 @font-face {
     font-family: 'SF Pro Text';
     src: url('./assets/Fonts/SF-light.ttf') format('truetype');
