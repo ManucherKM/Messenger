@@ -116,16 +116,16 @@ const PanelList = observer(() => {
                                 className="py-3 px-5 cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-600"
                             >
                                 <ItemList
-                                    isTyping={item.info.isTyping}
+                                    isTyping={item.friend.isTyping}
                                     time={item.info.timeLastMessage}
-                                    isCheckFriend={item.info.isCheckFriend}
-                                    isSend={item.info.isSend}
-                                    visibleMessage={item.info.visibleMessage}
-                                    name={item.info.name}
-                                    isOnline={item.info.isOnline}
-                                    img={item.info.urlImg}
-                                    isCheckMe={item.info.isCheckMe}
-                                    noCheck={item.info.noCheck}
+                                    isCheckFriend={item.info.messages[item.info.messages.length - 1].isCheck}
+                                    isSend={item.info.messages[item.info.messages.length - 1].isSend}
+                                    visibleMessage={item.info.messages[item.info.messages.length - 1].message}
+                                    name={item.friend.name}
+                                    isOnline={item.friend.isOnline}
+                                    img={item.friend.urlImg}
+                                    isCheckMe={item.user.noCheck === 0 ? true : false}
+                                    noCheck={item.user.noCheck}
                                 />
                             </div>
                         )}

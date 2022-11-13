@@ -1,7 +1,6 @@
 //Библиотеки
 import { observer } from "mobx-react-lite"
 import { useState } from "react"
-import { toJS } from "mobx"
 
 //Компоненты
 import FriendPanel from "../../../components/FriendPanel/FriendPanel"
@@ -14,15 +13,12 @@ import { useEffect } from "react"
 
 const Chat = observer(() => {
 
-  const [isRender, setIsRender] = useState(chatController.chatRender.chatId === undefined ? false : true)
+  const [isRender, setIsRender] = useState(chatController.chatRender.chatId !== undefined ? true : false)
 
   useEffect(() => {
     setIsRender(chatController.chatRender.chatId === undefined ? false : true)
   }, [chatController.chatRender.chatId])
 
-  const chat = toJS(chatController.chatRender)
-
-  const [messages, setMessages] = useState(toJS(chat))
 
   return (
     <div className='bg-blue w-full h-[100vh]'>
@@ -37,15 +33,10 @@ const Chat = observer(() => {
         isRender &&
         <div className="w-full h-full">
           <div>
-            <FriendPanel
-              avatar={chat.info.urlImg}
-              name={chat.info.name}
-            />
+            <FriendPanel />
           </div>
           <div>
-            <div className="px-5">
             <Messages />
-            </div>
           </div>
           <div>
             <TypeMessage />

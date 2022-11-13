@@ -1,23 +1,46 @@
+//Библиотеки
+import { toJS } from "mobx"
+import { useState, useEffect } from "react"
+import { observer } from "mobx-react-lite"
+
 //Компоненты
 import UserLogo from "../UserLogo/UserLogo"
 
-const FriendPanel = ({ avatar, name, isOnline }) => {
+//Утилиты
+import chatController from "../../store/chat"
+
+const FriendPanel = observer(() => {
+
+    const [friend, setFriend] = useState(
+        chatController.chatRender.chatId !== undefined
+            ? toJS(chatController.chatRender.friend)
+            : {}
+    )
+
+    useEffect(() => {
+        setFriend(
+            chatController.chatRender.chatId !== undefined
+                ? toJS(chatController.chatRender.friend)
+                : {}
+        )
+    }, [chatController.chatRender])
+
     return (
         <div className="flex justify-between p-3 border-b">
             <div className="flex">
                 <div className="mr-5">
-                    <UserLogo stylesImg="w-[70px] h-[70px] object-cover" srcImg={avatar} />
+                    <UserLogo stylesImg="w-[70px] h-[70px] object-cover" srcImg={friend.urlImg} />
                 </div>
                 <div className="flex flex-col justify-center">
                     <span className="text-black font-medium text-lg cursor-pointer hover:underline">
-                        {name}
+                        {friend.name}
                     </span>
-                    {isOnline &&
+                    {friend.isOnline &&
                         <span className="text-base text-green cursor-default">
                             Онлайн
                         </span>
                     }
-                    {!isOnline &&
+                    {!friend.isOnline &&
                         <span className="text-base opacity-50 font-medium text-black cursor-default">
                             Офлайн
                         </span>
@@ -42,6 +65,6 @@ const FriendPanel = ({ avatar, name, isOnline }) => {
             </div>
         </div>
     )
-}
+})
 
 export default FriendPanel

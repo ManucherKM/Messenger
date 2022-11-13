@@ -1,241 +1,358 @@
-import { makeAutoObservable } from "mobx"
+import { makeAutoObservable, toJS } from "mobx"
 
 class chatController {
 
     chats = [
         {
-            chatId: 1,
-            friendId: 2,
-            info: {
-                isTyping: false,
-                isCheckFriend: false,
-                isCheckMe: true,
-                isSend: true,
-                isOnline: false,
-                timeLastMessage: "16:44",
+            chatId: 23423425441234,
+            friend: {
+                id: 1,
                 name: "I am",
-                visibleMessage: "How are you doing?",
+                isOnline: false,
+                isTyping: false,
                 urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+            },
+            user: {
                 noCheck: 5,
+            },
+            info: {
+                endMessage: "How are you doing?",
+                timeLastMessage: "16:44",
                 messages: [
                     {
-                        messageId: 1,
+                        id: 1,
                         user: true,
-                        message: "JLKJDSFJBNKJHGDSFUIHENJNBKUHJSDJFbn"
+                        message: "How are you?",
+                        isSend: true,
+                        isCheck: false,
+                        time: "12:00"
                     },
                     {
-                        messageId: 2,
+                        id: 2,
                         user: false,
-                        message: "JLKJDSFJBNKJHGDSFUIHENJNBKUHJSDJFbn"
-                    },
-                    {
-                        messageId: 3,
-                        user: true,
-                        message: "JLKJDSFJBNKJHGDSFUIHENJNBKUHJSDJFbn"
-                    },
-                    {
-                        messageId: 4,
-                        user: false,
-                        message: "JLKJDSFJBNKJHGDSFUIHENJNBKUHJSDJFbn"
+                        message: "Good, and you?",
+                        isSend: true,
+                        isCheck: false,
+                        time: "12:00"
                     },
                 ]
             }
         },
         {
-            chatId: 1453543241,
-            info: {
-                isTyping: false,
-                isCheckFriend: false,
-                isCheckMe: true,
-                isSend: true,
-                isOnline: false,
-                timeLastMessage: "16:44",
+            chatId: 76543,
+            friend: {
+                id: 1,
                 name: "I am",
-                visibleMessage: "How are you doing?",
+                isOnline: false,
+                isTyping: false,
                 urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
-                noCheck: 5
+            },
+            user: {
+                noCheck: 5,
+            },
+            info: {
+                endMessage: "How are you doing?",
+                timeLastMessage: "16:44",
+                messages: [
+                    {
+                        id: 1,
+                        user: true,
+                        message: "How are you?",
+                        isSend: true,
+                        isCheck: false,
+                        time: "12:00"
+                    },
+                    {
+                        id: 2,
+                        user: false,
+                        message: "Good, and you?",
+                        isSend: true,
+                        isCheck: false,
+                        time: "12:00"
+                    },
+                ]
             }
         },
         {
-            chatId: 15345,
-            info: {
-                isTyping: false,
-                isCheckFriend: false,
-                isCheckMe: true,
-                isSend: true,
-                isOnline: false,
-                timeLastMessage: "16:44",
+            chatId: 345345,
+            friend: {
+                id: 1,
                 name: "I am",
-                visibleMessage: "How are you doing?",
+                isOnline: false,
+                isTyping: false,
                 urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
-                noCheck: 5
+            },
+            user: {
+                noCheck: 5,
+            },
+            info: {
+                endMessage: "How are you doing?",
+                timeLastMessage: "16:44",
+                messages: [
+                    {
+                        id: 1,
+                        user: true,
+                        message: "How are you?",
+                        isSend: true,
+                        isCheck: false,
+                        time: "12:00"
+                    },
+                    {
+                        id: 2,
+                        user: false,
+                        message: "Good, and you?",
+                        isSend: true,
+                        isCheck: false,
+                        time: "12:00"
+                    },
+                ]
             }
         },
         {
-            chatId: 1432,
-            info: {
-                isTyping: false,
-                isCheckFriend: false,
-                isCheckMe: true,
-                isSend: true,
-                isOnline: false,
-                timeLastMessage: "16:44",
+            chatId: 675645342,
+            friend: {
+                id: 1,
                 name: "I am",
-                visibleMessage: "How are you doing?",
+                isOnline: false,
+                isTyping: false,
                 urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
-                noCheck: 5
+            },
+            user: {
+                noCheck: 5,
+            },
+            info: {
+                endMessage: "How are you doing?",
+                timeLastMessage: "16:44",
+                messages: [
+                    {
+                        id: 1,
+                        user: true,
+                        message: "How are you?",
+                        isSend: true,
+                        isCheck: false,
+                        time: "12:00"
+                    },
+                    {
+                        id: 2,
+                        user: false,
+                        message: "Good, and you?",
+                        isSend: true,
+                        isCheck: false,
+                        time: "12:00"
+                    },
+                ]
             }
         },
         {
-            chatId: 1231,
-            info: {
-                isTyping: false,
-                isCheckFriend: false,
-                isCheckMe: true,
-                isSend: true,
-                isOnline: false,
-                timeLastMessage: "16:44",
+            chatId: 234234,
+            friend: {
+                id: 1,
                 name: "I am",
-                visibleMessage: "How are you doing?",
+                isOnline: false,
+                isTyping: false,
                 urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
-                noCheck: 5
+            },
+            user: {
+                noCheck: 5,
+            },
+            info: {
+                endMessage: "How are you doing?",
+                timeLastMessage: "16:44",
+                messages: [
+                    {
+                        id: 1,
+                        user: true,
+                        message: "How are you?",
+                        isSend: true,
+                        isCheck: false,
+                        time: "12:00"
+                    },
+                    {
+                        id: 2,
+                        user: false,
+                        message: "Good, and you?",
+                        isSend: true,
+                        isCheck: false,
+                        time: "12:00"
+                    },
+                ]
+            }
+        },
+        {
+            chatId: 433122131212,
+            friend: {
+                id: 1,
+                name: "I am",
+                isOnline: false,
+                isTyping: false,
+                urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+            },
+            user: {
+                noCheck: 5,
+            },
+            info: {
+                endMessage: "How are you doing?",
+                timeLastMessage: "16:44",
+                messages: [
+                    {
+                        id: 1,
+                        user: true,
+                        message: "How are you?",
+                        isSend: true,
+                        isCheck: false,
+                        time: "12:00"
+                    },
+                    {
+                        id: 2,
+                        user: false,
+                        message: "Good, and you?",
+                        isSend: true,
+                        isCheck: false,
+                        time: "12:00"
+                    },
+                ]
+            }
+        },
+        {
+            chatId: 9765,
+            friend: {
+                id: 1,
+                name: "I am",
+                isOnline: false,
+                isTyping: false,
+                urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+            },
+            user: {
+                noCheck: 5,
+            },
+            info: {
+                endMessage: "How are you doing?",
+                timeLastMessage: "16:44",
+                messages: [
+                    {
+                        id: 1,
+                        user: true,
+                        message: "How are you?",
+                        isSend: true,
+                        isCheck: false,
+                        time: "12:00"
+                    },
+                    {
+                        id: 2,
+                        user: false,
+                        message: "Good, and you?",
+                        isSend: true,
+                        isCheck: false,
+                        time: "12:00"
+                    },
+                ]
+            }
+        },
+        {
+            chatId: 65356,
+            friend: {
+                id: 1,
+                name: "I am",
+                isOnline: false,
+                isTyping: false,
+                urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+            },
+            user: {
+                noCheck: 5,
+            },
+            info: {
+                endMessage: "How are you doing?",
+                timeLastMessage: "16:44",
+                messages: [
+                    {
+                        id: 1,
+                        user: true,
+                        message: "How are you?",
+                        isSend: true,
+                        isCheck: false,
+                        time: "12:00"
+                    },
+                    {
+                        id: 2,
+                        user: false,
+                        message: "Good, and you?",
+                        isSend: true,
+                        isCheck: false,
+                        time: "12:00"
+                    },
+                ]
+            }
+        },
+        {
+            chatId: 123123,
+            friend: {
+                id: 1,
+                name: "I am",
+                isOnline: false,
+                isTyping: false,
+                urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+            },
+            user: {
+                noCheck: 0,
+            },
+            info: {
+                endMessage: "How are you doing?",
+                timeLastMessage: "16:44",
+                messages: [
+                    {
+                        id: 1,
+                        user: true,
+                        message: "How are you?",
+                        isSend: true,
+                        isCheck: false,
+                        time: "12:00"
+                    },
+                    {
+                        id: 2,
+                        user: false,
+                        message: "Good, and you?",
+                        isSend: true,
+                        isCheck: false,
+                        time: "12:00"
+                    },
+                ]
             }
         },
         {
             chatId: 2,
-            info: {
-                isTyping: false,
-                isCheckFriend: false,
-                isCheckMe: false,
-                isSend: true,
+            friend: {
+                id: 1,
+                name: "I am",
                 isOnline: false,
-                timeLastMessage: "18:40",
-                name: "John Doe",
-                visibleMessage: "How are you doing?",
+                isTyping: false,
                 urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
-                noCheck: 5
+            },
+            user: {
+                noCheck: 5,
+            },
+            info: {
+                endMessage: "How are you doing?",
+                timeLastMessage: "16:44",
+                messages: [
+                    {
+                        id: 1,
+                        user: true,
+                        message: "How are you?",
+                        isSend: true,
+                        isCheck: false,
+                        time: "12:00"
+                    },
+                    {
+                        id: 2,
+                        user: false,
+                        message: "Good, and you?",
+                        isSend: true,
+                        isCheck: false,
+                        time: "12:00"
+                    },
+                ]
             }
         },
-        {
-            chatId: 3,
-            info: {
-                isTyping: false,
-                isCheckFriend: false,
-                isCheckMe: false,
-                isSend: true,
-                isOnline: false,
-                timeLastMessage: "9:40",
-                name: "John Doe",
-                visibleMessage: "How are you doing?",
-                urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
-                noCheck: 5
-            }
-        },
-        {
-            chatId: 4,
-            info: {
-                isTyping: false,
-                isCheckFriend: false,
-                isCheckMe: false,
-                isSend: true,
-                isOnline: false,
-                timeLastMessage: "11:40",
-                name: "John Doe",
-                visibleMessage: "How are you doing?",
-                urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
-                noCheck: 5
-            }
-        },
-        {
-            chatId: 5,
-            info: {
-                isTyping: false,
-                isCheckFriend: false,
-                isCheckMe: false,
-                isSend: true,
-                isOnline: false,
-                timeLastMessage: "16:40",
-                name: "John Doe",
-                visibleMessage: "How are you doing?",
-                urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
-                noCheck: 5
-            }
-        },
-        {
-            chatId: 6,
-            info: {
-                isTyping: false,
-                isCheckFriend: false,
-                isCheckMe: false,
-                isSend: true,
-                isOnline: false,
-                timeLastMessage: "16:40",
-                name: "John Doe",
-                visibleMessage: "How are you doing?",
-                urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
-                noCheck: 5
-            }
-        },
-        {
-            chatId: 7,
-            info: {
-                isTyping: false,
-                isCheckFriend: false,
-                isCheckMe: false,
-                isSend: true,
-                isOnline: false,
-                timeLastMessage: "16:40",
-                name: "John Doe",
-                visibleMessage: "How are you doing?",
-                urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
-                noCheck: 5
-            }
-        },
-        {
-            chatId: 8,
-            info: {
-                isTyping: false,
-                isCheckFriend: false,
-                isCheckMe: false,
-                isSend: true,
-                isOnline: false,
-                timeLastMessage: "16:40",
-                name: "John Doe",
-                visibleMessage: "How are you doing?",
-                urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
-                noCheck: 5
-            }
-        },
-        {
-            chatId: 9,
-            info: {
-                isTyping: false,
-                isCheckFriend: false,
-                isCheckMe: false,
-                isSend: true,
-                isOnline: false,
-                timeLastMessage: "16:40",
-                name: "John Doe",
-                visibleMessage: "How are you doing?",
-                urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
-                noCheck: 5
-            }
-        },
-        {
-            chatId: 10,
-            info: {
-                isTyping: false,
-                isCheckFriend: false,
-                isCheckMe: false,
-                isSend: true,
-                isOnline: false,
-                timeLastMessage: "16:40",
-                name: "John Doe",
-                visibleMessage: "How are you doing?",
-                urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
-                noCheck: 5
-            }
-        }
     ]
 
     chatRender = {}
@@ -248,7 +365,7 @@ class chatController {
 
     search(val) {
         this.workerChats = [...this.chats].filter(item => {
-            if (item.info.name.toUpperCase().includes(val.toUpperCase())) {
+            if (item.friend.name.toUpperCase().includes(val.toUpperCase())) {
                 return item
             }
         })
@@ -257,7 +374,7 @@ class chatController {
     sort(val) {
         if (val === "Не прочитанному") {
             this.workerChats = [...this.chats].filter(item => {
-                if (!(item.info.isCheckMe)) {
+                if (item.user.noCheck !== 0) {
                     return item
                 }
             })
@@ -274,7 +391,23 @@ class chatController {
     }
 
     updateChatRender(obj) {
-        this.chatRender = {...obj}
+        this.chatRender = { ...obj }
+    }
+
+    sendMessage(message) {
+        if (this.chatRender.chatId === undefined) {
+            return
+        }
+        // Отправляем запрос на бекенд и полученое сообщение вставляем в список сообщений 
+        const newMessage = {
+            id: 1,
+            user: true,
+            message: message.message,
+            isSend: true,
+            isCheck: false,
+            time: "12:00"
+        }
+        this.chatRender.info.messages = [...this.chatRender.info.messages, newMessage]
     }
 }
 
