@@ -12,7 +12,7 @@ const Panel = () => {
     <div className="flex">
       <Navbar />
       <div className='flex w-[calc(100vw-80px)]'>
-        <div className="border-r">
+        <div className="border-r bg-white dark:bg-dark dark:border-gray-600">
           <PanelList />
         </div>
         <Chat />

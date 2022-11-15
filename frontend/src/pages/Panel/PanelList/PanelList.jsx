@@ -108,7 +108,7 @@ const PanelList = observer(() => {
                             />
                         </div>
                     </div>
-                    <div className="mt-5 scroll overflow-auto h-[calc(100vh-185px)]">
+                    <div className="mt-5 scroll overflow-auto h-[calc(100vh-182px)]">
                         {!notFound && listChats.map(item =>
                             <div
                                 onClick={() => clickMessage(item)}

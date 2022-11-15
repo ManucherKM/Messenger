@@ -23,7 +23,7 @@ const Chat = observer(() => {
   return (
     <div className='bg-blue w-full h-[100vh]'>
       {!isRender &&
-        <div className="w-full h-full flex-center bg-gray-100">
+        <div className="w-full h-full flex-center bg-dark/[.1] dark:bg-dark">
           <span className="text-xl text-green">
             Чтобы просматривать сообщения перейдите в чат
           </span>
@@ -31,7 +31,7 @@ const Chat = observer(() => {
       }
       {
         isRender &&
-        <div className="w-full h-full">
+        <div className="w-full h-full dark:bg-whiteDark">
           <div>
             <FriendPanel />
           </div>

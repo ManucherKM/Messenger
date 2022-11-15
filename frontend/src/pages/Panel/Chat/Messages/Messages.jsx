@@ -24,7 +24,7 @@ const Messages = observer(() => {
   }, [chatController.chatRender, chatController.chatRender.info.messages])
 
   return (
-    <div className="w-full h-[calc(100vh-136px)] flex flex-col justify-end overflow-auto">
+    <div className="w-full h-[calc(100vh-152px)] flex flex-col justify-end overflow-auto">
       <div className="px-5 pb-5">
         {listMessage.map(item =>
           <TextMessage
