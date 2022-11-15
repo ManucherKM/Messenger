@@ -400,7 +400,7 @@ class chatController {
         }
         // Отправляем запрос на бекенд и полученое сообщение вставляем в список сообщений 
         const newMessage = {
-            id: 1,
+            id: Date.now(),
             user: true,
             message: message.message,
             isSend: true,

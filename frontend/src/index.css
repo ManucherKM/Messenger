@@ -25,6 +25,10 @@ body {
     overflow: hidden;
 }
 
+.scroll {
+    overflow-y: scroll;
+}
+
 .scroll::-webkit-scrollbar {
     width: 6px;
 }
@@ -53,11 +57,11 @@ body {
     fill: white;
 }
 
-.cameraChat:hover .cameraSvgChat{
+.cameraChat:hover .cameraSvgChat {
     fill: #27AE60
 }
 
-.infoChat:hover .infoSvgChat{
+.infoChat:hover .infoSvgChat {
     fill: #27AE60
 }
 
