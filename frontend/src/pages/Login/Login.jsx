@@ -16,13 +16,14 @@ import userController from "../../store/user"
 //Изображения
 import googleLogo from "../../assets/Images/google.svg"
 import vkLogo from "../../assets/Images/vk.svg"
+import { Link } from "react-router-dom"
 
 const Login = observer(() => {
 
   //Состояние спинера
   const [loading, setLoading] = useState(false)
 
-  const [isCorrectEmail, setIsCorrectEmail] = useState(false)
+  const [isCorrectEmail, setIsCorrectEmail] = useState(null)
 
   const [emailValue, setEmailValue] = useState("")
 
@@ -33,32 +34,44 @@ const Login = observer(() => {
   //При вводе почты
   function email(val) {
 
+    setEmailValue(val)
+
     //Если почта валидная
     if (validator.email(val).result) {
 
-      //Очищаем массив ошибок
       setEmailErrors([])
 
       setIsCorrectEmail(true)
 
-      setEmailValue(val)
+    } else {
+
+      setIsCorrectEmail(false)
+
+      setEmailErrors(validator.email(val).errors);
     }
 
-    //Меняем стили для почты
-    setStyleEmail(isCorrectEmail ? "border-green dark:border-green" : "border-red-400 dark:border-red-400")
+    if (val === "") {
 
-    //Меняет массив ошибок
-    setEmailErrors(validator.email(val).errors);
+      setStyleEmail("")
+
+      setEmailErrors([])
+
+    } else {
+
+      setStyleEmail(isCorrectEmail ? "border-green dark:border-green" : "border-red-400 dark:border-red-400")
+
+    }
 
   }
 
+  //Пропускаем первый рендер
   useEffect(() => {
     if (styleEmail) {
       setStyleEmail(isCorrectEmail ? "border-green dark:border-green" : "border-red-400 dark:border-red-400")
     }
   }, [isCorrectEmail])
 
-  const [isCorrectPassword, setIsCorrectPassword] = useState(false)
+  const [isCorrectPassword, setIsCorrectPassword] = useState(null)
 
   const [passwordValue, setPasswordValue] = useState("")
 
@@ -69,23 +82,38 @@ const Login = observer(() => {
   //То же самое что и с почтаой
   function password(val) {
 
+    setPasswordValue(val)
+
     if (validator.password(val).result) {
 
       setPasswordErrors([])
 
       setIsCorrectPassword(true)
 
-      setPasswordValue(val)
+    } else {
+
+      setIsCorrectPassword(false)
+
+      setPasswordErrors(validator.password(val).errors)
+
     }
+    if (val === "") {
 
-    setPasswordErrors(validator.password(val).errors)
+      setStylePassword("")
 
-    setStylePassword(isCorrectPassword ? "border-green dark:border-green" : "border-red-400 dark:border-red-400")
+      setPasswordErrors([])
+
+    } else {
+
+      setStylePassword(isCorrectPassword ? "border-green dark:border-green" : "border-red-400 dark:border-red-400")
+
+    }
 
   }
 
+  //Пропускаем первый рендер
   useEffect(() => {
-    if (passwordValue) {
+    if (stylePassword) {
       setStylePassword(isCorrectPassword ? "border-green dark:border-green" : "border-red-400 dark:border-red-400")
     }
   }, [isCorrectPassword])
@@ -99,7 +127,6 @@ const Login = observer(() => {
   function login() {
     setLoading(true)
 
-
     const obj = {
       email: emailValue,
       password: passwordValue
@@ -107,16 +134,18 @@ const Login = observer(() => {
 
     const err = userController.login(obj)
 
-    if (err) {
+    if (err.length !== 0) {
       setLoading(false)
 
       console.log("Неверный логин или пароль");
-      
+
       setEmailErrors(["Неверный логин или пароль"])
       setIsCorrectEmail(false)
+      setStyleEmail(isCorrectEmail ? "border-green dark:border-green" : "border-red-400 dark:border-red-400")
 
       setPasswordErrors(["Неверный логин или пароль"])
       setIsCorrectPassword(false)
+      setStylePassword(isCorrectPassword ? "border-green dark:border-green" : "border-red-400 dark:border-red-400")
 
       return
     }
@@ -186,6 +215,9 @@ const Login = observer(() => {
                 click={login}
                 type={"submit"}
               />
+              <Link className="text-green text-sm font-medium mt-3 ml-auto hover:opacity-60" to="/register">
+                Регистрация
+              </Link>
             </form>
             <div className="flex justify-center my-5">
               <span className="subtitle text-green">
