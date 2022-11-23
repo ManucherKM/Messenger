@@ -42,7 +42,8 @@ const PanelList = observer(() => {
 
     //При клике на сообщение
     function clickMessage(obj) {
-        chatController.updateChatRender(obj)
+        console.log(obj.chatId);
+        chatController.updateChatRender(obj.chatId)
     }
 
     //При потере курсора label

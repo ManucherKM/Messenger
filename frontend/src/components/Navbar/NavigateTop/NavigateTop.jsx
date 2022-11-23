@@ -14,11 +14,11 @@ import userControll from "../../../store/user"
 
 const NavigateTop = observer(() => {
 
-    let userAvatar = userControll.config.info.avatar
+    let userAvatar = userControll.info.avatar
 
     useEffect(() => {
-        userAvatar = userControll.config.info.avatar
-    }, [userControll.config.info.avatar])
+        userAvatar = userControll.info.avatar
+    }, [userControll.info.avatar])
 
     return (
         <div className='mx-[11px] mt-[27px] border-b border-black/[.1] dark:border-white/[.3]'>

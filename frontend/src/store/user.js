@@ -6,12 +6,14 @@ class User {
 
     token = {}
 
-    info = {}
+    info = {
+        avatar: "https://images.unsplash.com/photo-1669058665299-d6f81125dce7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+    }
 
     constructor() {
         makeAutoObservable(this)
     }
-    
+
     login(obj) {
 
         let err = []
@@ -22,7 +24,7 @@ class User {
 
         err = [] //Есть ли ошибки при работе с сервером?
 
-        if (err) {
+        if (err.length !== 0) {
             return err
         }
 
@@ -34,8 +36,7 @@ class User {
         }
 
         this.token = { ...token }
-        this.register = true
-
+        this.isRegister = true
         return err
     }
     loginGoogle(obj) {
@@ -100,7 +101,7 @@ class User {
 
         err = [] //Есть ли ошибки при работе с сервером?
 
-        if (err) {
+        if (err.length !== 0) {
             return err
         }
 
@@ -112,7 +113,7 @@ class User {
         }
 
         this.token = { ...token }
-        this.register = true
+        this.isRegister = true
 
         return err
     }
@@ -128,7 +129,7 @@ class User {
         if (err) {
             return err
         }
-console.log(123);
+        console.log(123);
         //Ответ
 
         const token = {

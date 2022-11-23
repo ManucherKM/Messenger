@@ -335,8 +335,23 @@ class chatController {
         }
     }
 
-    updateChatRender(obj) {
-        this.chatRender = { ...obj }
+    updateChatRender(chatId) {
+        /*
+        
+        Запрос на бекенд
+
+        */
+
+        const response = {
+            id: Date.now(),
+            message: "How Are Yput",
+            isSend: true,
+            isCheck: false,
+            time: "16:00",
+            isUser: true
+        }
+
+        this.chatRender.messages = [...this.chatRender, response]
     }
 
     sendMessage(message) {

@@ -1,6 +1,7 @@
 //Библиотеки
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { observer } from "mobx-react-lite"
 //Компоненты
 import Button from "../../../components/Button/Button"
 //Утилиты
@@ -8,7 +9,8 @@ import InputEmail from "../InputEmail/InputEmail"
 import InputPassword from "../InputPassword/InputPassword"
 import userController from "../../../store/user"
 
-const Form = ({ setLoading }) => {
+const Form = observer(({ setLoading }) => {
+    const navigate = useNavigate();
     const [disableBtn, setDisableBtn] = useState(true);
 
     const [isCorrectEmail, setIsCorrectEmail] = useState(false)
@@ -48,6 +50,12 @@ const Form = ({ setLoading }) => {
         updateBtn()
     }, [isCorrectEmail, isCorrectPassword])
 
+    useEffect(() => {
+        if (userController.isRegister) {
+            navigate("/panel/chat")
+        }
+    }, [userController.isRegister])
+
     //При отправке формы
     const formSend = e => e.preventDefault()
     return (
@@ -83,6 +91,6 @@ const Form = ({ setLoading }) => {
             </Link>
         </form>
     )
-}
+})
 
 export default Form
