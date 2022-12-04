@@ -7,7 +7,7 @@ class chatController {
             chatId: 23423425441234,
             friend: {
                 id: 1,
-                name: "I am",
+                name: "Message",
                 isOnline: true,
                 isTyping: false,
                 urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
@@ -286,7 +286,7 @@ class chatController {
                 urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
             },
             user: {
-                noCheck: 5,
+                noCheck: 0,
             },
             message: {
                 text: "How are you doing?",
@@ -324,8 +324,8 @@ class chatController {
         } else if (val === "Последнему") {
             const dateNow = Date.now()
             this.workerChats = [...this.chats].sort((a, b) => {
-                const [hourA, minA] = a.info.timeLastMessage.split(":")
-                const [hourB, minB] = b.info.timeLastMessage.split(":")
+                const [hourA, minA] = a.message.time.split(":")
+                const [hourB, minB] = b.message.time.split(":")
                 const isMilsecA = dateNow - ((Number(hourA) * 60) + Number(minA)) * 60 * 1000
                 const isMilsecB = dateNow - ((Number(hourB) * 60) + Number(minB)) * 60 * 1000
                 return isMilsecA - isMilsecB

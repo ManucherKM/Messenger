@@ -8,8 +8,8 @@ const TextMessage = ({ message, time, isSend, isCheck, isUser, PKM }) => {
             {isUser &&
                 <div onContextMenu={e => contextMenu(e)} className="ml-[100px]">
 
-                    <div className="bg-gray-200 cursor-default py-2 px-3 rounded-xl rounded-br-none my-4 flex flex-col items-end w-fit ml-auto">
-                        <span className="text-base text-black break-word break-all">
+                    <div className="bg-gray-200 cursor-default py-2 px-3 rounded-xl rounded-br-none my-4 flex flex-col items-end w-fit ml-auto dark:bg-dark">
+                        <span className="text-base text-black break-word break-all dark:opacity-80 dark:text-white">
                             {message}
                         </span>
                         <div className="flex items-center">
@@ -28,7 +28,7 @@ const TextMessage = ({ message, time, isSend, isCheck, isUser, PKM }) => {
                                 </div>
                             }
                             <div>
-                                <span className="text-xs text-black opacity-50">
+                                <span className="text-xs text-black opacity-50 dark:text-white">
                                     {time}
                                 </span>
                             </div>
@@ -38,13 +38,13 @@ const TextMessage = ({ message, time, isSend, isCheck, isUser, PKM }) => {
 
             }
             {!isUser &&
-                <div onContextMenu={e => contextMenu(e)} className="bg-gray-200 cursor-default py-2 px-3 rounded-xl rounded-bl-none my-4 flex flex-col items-start w-fit mr-auto">
-                    <span className="text-base text-black">
+                <div onContextMenu={e => contextMenu(e)} className="bg-gray-200 cursor-default py-2 px-3 rounded-xl rounded-bl-none my-4 flex flex-col items-start w-fit mr-auto dark:bg-dark">
+                    <span className="text-base text-black break-word break-all dark:opacity-80 dark:text-white">
                         {message}
                     </span>
                     <div className="flex items-center">
                         <div>
-                            <span className="text-xs text-black opacity-50">
+                            <span className="text-xs text-black opacity-50 dark:text-white">
                                 {time}
                             </span>
                         </div>
