@@ -4,6 +4,10 @@ class User {
 
     isRegister = true
 
+    config = {
+        darkTheme: true
+    }
+
     token = {}
 
     info = {
@@ -178,6 +182,19 @@ class User {
         this.token = {}
         this.info = {}
         console.log("exit", this.register);
+    }
+
+    updateConfig(newConfig) {
+        this.config = newConfig
+        if (this.config.darkTheme) {
+            localStorage.theme = "dark"
+        } else {
+            localStorage.theme = "light"
+        }
+
+        /*
+        Запрос на бекенд
+        */
     }
 }
 

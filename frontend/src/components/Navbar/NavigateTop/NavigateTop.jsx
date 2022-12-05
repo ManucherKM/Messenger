@@ -24,7 +24,7 @@ const NavigateTop = observer(() => {
         <div className='mx-[11px] mt-[27px] border-b border-black/[.1] dark:border-white/[.3]'>
             <div className='flex-center cursor-pointer'>
                 <Link
-                    to="/panel"
+                    to="/chat"
                     className='w-4/6'
                 >
                     <img

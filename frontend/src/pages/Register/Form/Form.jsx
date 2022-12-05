@@ -39,7 +39,7 @@ const Form = observer(({ setLoading }) => {
         }
         console.log("Регистрация", obj);
         setLoading(false)
-        navigate("/panel/chat")
+        navigate("/chat")
     }
 
     function updateBtn() {

@@ -1,4 +1,4 @@
-import { makeAutoObservable, toJS } from "mobx"
+import { makeAutoObservable } from "mobx"
 
 class chatController {
 
@@ -389,6 +389,12 @@ class chatController {
         }
 
         this.chatRender.messages.push(newMessage)
+    }
+    removeMessage(messageId) {
+        this.chatRender.messages = this.chatRender.messages.filter(item => item.id !== messageId);
+        /*
+        Запрос на бекенд
+        */
     }
 }
 

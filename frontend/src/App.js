@@ -1,22 +1,32 @@
 import { Route, Routes } from 'react-router-dom'
+import { observer } from 'mobx-react-lite'
+import { useEffect } from 'react'
+
 import LoginIndex from './pages/Login/LoginIndex'
 import Panel from './pages/Panel/Panel'
 import RegisterIndex from './pages/Register/RegisterIndex'
 import SettingIndex from './pages/Setting/SettingIndex'
-import checkTheme from './utils/themeCheck'
 
-const App = () => {
-  checkTheme()
+import userController from './store/user'
+import checkTheme from './utils/themeCheck'
+import Profile from './pages/Profile/Profile'
+
+const App = observer(() => {
+  //Если цветовая тема меняется - перерендериваем все приложение
+  useEffect(() => {
+    checkTheme()
+  }, [userController.config.darkTheme])
   return (
-    <div className='flex'>
+    <div>
       <Routes>
-        <Route path='/panel/chat' element={<Panel />} />
+        <Route path='/chat' element={<Panel />} />
         <Route path='/' element={<LoginIndex />} />
         <Route path='/register' element={<RegisterIndex />} />
-        <Route path='/panel/setting' element={<SettingIndex />} />
+        <Route path='/setting' element={<SettingIndex />} />
+        <Route path='/profile/:id' element={<Profile />} />
       </Routes>
     </div>
   )
-}
+})
 
 export default App

@@ -18,27 +18,12 @@ const Messages = observer(() => {
   const [y, setY] = useState(0);
   const [selectMessage, setSelectMessage] = useState(null)
 
-
-
-  function uploadContextMenu(e) {
+  function uploadContextMenu(e, id) {
+    setSelectMessage(id)
     setX(e.pageX)
     setY(e.pageY)
     setIsContextMenu(!isContextMenu)
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   useEffect(() => {
     listMessage = chatController.chatRender.chatId !== undefined
@@ -53,28 +38,42 @@ const Messages = observer(() => {
   }, [listMessage])
 
   return (
-    <div className="w-full h-[calc(100vh-152px)] flex flex-col justify-end overflow-auto bg-gray-100 dark:bg-whiteDark">
-      {isContextMenu &&
-        <ContextMenu
-          setIsRender={setIsContextMenu}
-          x={x}
-          y={y}
-        />
+    <>
+      {listMessage.length === 0
+        ?
+        <div className="w-full h-[calc(100vh-152px)] bg-gray-100 dark:bg-whiteDark flex-center">
+          <span className="text-xl text-green">
+            Похоже что у вас нет ни одного сообщения
+          </span>
+        </div>
+        :
+        <div className="w-full h-[calc(100vh-152px)] flex flex-col justify-end overflow-auto bg-gray-100 dark:bg-whiteDark">
+          {isContextMenu &&
+            <ContextMenu
+              setIsRender={setIsContextMenu}
+              x={x}
+              y={y}
+              messageId={selectMessage}
+            />
+          }
+          <div ref={chatMessages} className="px-5 overflow-y-scroll scroll">
+            {listMessage.map(item =>
+              <TextMessage
+                message={item.message}
+                isCheck={item.isCheck}
+                isSend={item.isSend}
+                time={item.time}
+                isUser={item.user}
+                PKM={uploadContextMenu}
+                key={item.id}
+                id={item.id}
+              />
+            )}
+          </div>
+        </div>
       }
-      <div ref={chatMessages} className="px-5 overflow-y-scroll scroll">
-        {listMessage.map(item =>
-          <TextMessage
-            message={item.message}
-            isCheck={item.isCheck}
-            isSend={item.isSend}
-            time={item.time}
-            isUser={item.user}
-            PKM={uploadContextMenu}
-            key={item.id}
-          />
-        )}
-      </div>
-    </div>
+    </>
+
   )
 })
 

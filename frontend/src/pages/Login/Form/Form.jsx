@@ -38,7 +38,7 @@ const Form = observer(({ setLoading }) => {
         }
         console.log("Вход", obj);
         setLoading(false)
-        navigate("/panel/chat")
+        navigate("/chat")
     }
 
     function updateBtn() {

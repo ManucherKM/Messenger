@@ -1,13 +1,12 @@
-const TextMessage = ({ message, time, isSend, isCheck, isUser, PKM }) => {
+const TextMessage = ({ id, message, time, isSend, isCheck, isUser, PKM }) => {
     function contextMenu(e) {
         e.preventDefault()
-        PKM(e)
+        PKM(e, id)
     }
     return (
         <div>
             {isUser &&
                 <div onContextMenu={e => contextMenu(e)} className="ml-[100px]">
-
                     <div className="bg-gray-200 cursor-default py-2 px-3 rounded-xl rounded-br-none my-4 flex flex-col items-end w-fit ml-auto dark:bg-dark">
                         <span className="text-base text-black break-word break-all dark:opacity-80 dark:text-white">
                             {message}

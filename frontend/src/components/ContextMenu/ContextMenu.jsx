@@ -1,4 +1,6 @@
-const ContextMenu = ({ x, y, setIsRender }) => {
+import chatController from "../../store/chat";
+
+const ContextMenu = ({ x, y, setIsRender, messageId }) => {
 
     function mouseHandler() {
         setIsRender(false)
@@ -6,6 +8,7 @@ const ContextMenu = ({ x, y, setIsRender }) => {
 
     function remove() {
         console.log("remove");
+        chatController.removeMessage(messageId)
         setIsRender(false)
 
     }
