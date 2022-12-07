@@ -35,7 +35,7 @@ const NavigateTop = observer(() => {
                 </Link>
             </div>
             <UserLogo
-                path={"/"}
+                path={`/profile/${userControll.info.id}`}
                 stylesWrapper={"mt-7 pb-[23px]"}
                 srcImg={userAvatar}
             />

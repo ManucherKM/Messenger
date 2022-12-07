@@ -2,6 +2,7 @@
 import { toJS } from "mobx"
 import { useState, useEffect } from "react"
 import { observer } from "mobx-react-lite"
+import { useNavigate } from "react-router-dom"
 
 //Компоненты
 import UserLogo from "../../../../components/UserLogo/UserLogo"
@@ -10,12 +11,19 @@ import UserLogo from "../../../../components/UserLogo/UserLogo"
 import chatController from "../../../../store/chat"
 
 const FriendPanel = observer(() => {
+    const navigate = useNavigate()
+
 
     const [friend, setFriend] = useState(
         chatController.chatRender.chatId !== undefined
             ? toJS(chatController.chatRender.friend)
             : {}
     )
+
+
+    function redirect() {
+        navigate(`/profile/${friend.id}`)
+    }
 
     useEffect(() => {
         setFriend(
@@ -25,17 +33,19 @@ const FriendPanel = observer(() => {
         )
     }, [chatController.chatRender])
 
+
     return (
         <div className="flex justify-between p-3 border-b bg-white dark:bg-dark dark:border-gray-600">
             <div className="flex">
                 <div className="mr-5">
                     <UserLogo
+                        path={`/profile/${friend.id}`}
                         stylesImg="w-[70px] h-[70px] object-cover"
                         srcImg={friend.urlImg}
                     />
                 </div>
                 <div className="flex flex-col justify-center">
-                    <span className="text-black font-medium text-lg cursor-pointer hover:underline dark:text-white opacity-80">
+                    <span onClick={redirect} className="text-black font-medium text-lg cursor-pointer hover:underline dark:text-white opacity-80">
                         {friend.name}
                     </span>
                     {friend.isOnline &&
@@ -58,7 +68,7 @@ const FriendPanel = observer(() => {
                         </svg>
                     </div>
                 </div>
-                <div className="m-auto">
+                <div onClick={redirect} className="m-auto">
                     <div className="p-4 rounded-xl cursor-pointer hover:bg-gray-100 infoChat dark:hover:bg-gray-600">
                         <svg width="24" height="24" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path className="infoSvgChat" d="M9 18C4.0293 18 0 13.9707 0 9C0 4.0293 4.0293 0 9 0C13.9707 0 18 4.0293 18 9C18 13.9707 13.9707 18 9 18ZM9 16.2C10.9096 16.2 12.7409 15.4414 14.0912 14.0912C15.4414 12.7409 16.2 10.9096 16.2 9C16.2 7.09044 15.4414 5.25909 14.0912 3.90883C12.7409 2.55857 10.9096 1.8 9 1.8C7.09044 1.8 5.25909 2.55857 3.90883 3.90883C2.55857 5.25909 1.8 7.09044 1.8 9C1.8 10.9096 2.55857 12.7409 3.90883 14.0912C5.25909 15.4414 7.09044 16.2 9 16.2ZM8.1 4.5H9.9V6.3H8.1V4.5ZM8.1 8.1H9.9V13.5H8.1V8.1Z" fill="#bbb" />

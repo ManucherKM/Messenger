@@ -24,6 +24,7 @@ const App = observer(() => {
         <Route path='/register' element={<RegisterIndex />} />
         <Route path='/setting' element={<SettingIndex />} />
         <Route path='/profile/:id' element={<Profile />} />
+        <Route path='/me' element={<Profile />} />
       </Routes>
     </div>
   )

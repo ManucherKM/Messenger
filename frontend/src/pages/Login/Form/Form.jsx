@@ -76,6 +76,7 @@ const Form = observer(({ setLoading }) => {
                 click={login}
                 type={"submit"}
                 disabled={disableBtn}
+                style="mt-5"
             />
             <Link
                 className="text-green text-sm font-medium mt-3 ml-auto hover:opacity-60"
