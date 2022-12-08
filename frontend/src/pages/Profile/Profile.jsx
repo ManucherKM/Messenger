@@ -95,8 +95,8 @@ const Profile = () => {
                                 <div className="flex justify-end p-2">
                                     <Button
                                         text="Изменить"
-                                        click={() => { }}
-                                        style="px-4 py-2 mt-5"
+                                        onClick={() => { }}
+                                        styles="px-4 py-2 mt-5"
                                     />
                                 </div>
                             }
@@ -131,13 +131,13 @@ const Profile = () => {
                                             {isUser
                                                 ? <Button
                                                     text="Редактировать профиль"
-                                                    click={updateProfile}
-                                                    style="px-4 py-2"
+                                                    onClick={updateProfile}
+                                                    styles="px-4 py-2"
                                                 />
                                                 : <Button
                                                     text="Сообщение"
-                                                    click={message}
-                                                    style="px-4 py-2"
+                                                    onClick={message}
+                                                    styles="px-4 py-2"
                                                 />
                                             }
 
@@ -176,8 +176,8 @@ const Profile = () => {
                                     <div className="mb-10 flex-center">
                                         <Button
                                             text="Смотреть еще"
-                                            click={updateFriend}
-                                            style="px-4 py-2"
+                                            onClick={updateFriend}
+                                            styles="px-4 py-2"
                                         />
                                     </div>
                                 }

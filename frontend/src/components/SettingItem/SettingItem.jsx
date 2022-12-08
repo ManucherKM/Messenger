@@ -1,3 +1,4 @@
+//Компоненты
 import CheckBox from "../CheckBox/CheckBox"
 
 const SettingItem = ({ text, setCheckbox, isCheck = false }) => {

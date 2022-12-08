@@ -1,4 +1,15 @@
-const ItemMessage = ({ img, isOnline, name, visibleMessage, time, isSend, isCheckFriend, isTyping, isCheckMe, noCheck }) => {
+const ItemMessage = ({
+    img,
+    isOnline,
+    name,
+    visibleMessage,
+    time,
+    isSend,
+    isCheckFriend,
+    isTyping,
+    isCheckMe,
+    noCheck
+}) => {
 
     const isMarkOne = isCheckMe && isSend && !isCheckFriend;
 

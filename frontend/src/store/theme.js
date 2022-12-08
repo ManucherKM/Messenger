@@ -1,4 +1,7 @@
+//Библиотеки
 import { makeAutoObservable } from "mobx"
+
+//Утилиты
 import checkTheme from "../utils/themeCheck"
 
 class Theme {

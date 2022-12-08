@@ -1,14 +1,14 @@
-const Button = ({ style = "", type = "text", click, text, disabled = false }) => {
+const Button = ({ styles = "", type = "text", onClick, text, disabled = false }) => {
 
     function btn() {
-        click()
+        onClick()
     }
 
     return (
         <button
             onClick={btn}
             type={type}
-            className={`outline-none bg-green rounded-xl py-3 text-white text-base hover:opacity-70 disabled:opacity-60 ${style}`}
+            className={`outline-none bg-green rounded-xl py-3 text-white text-base hover:opacity-70 disabled:opacity-60 ${styles}`}
             disabled={disabled}
         >
             {text}

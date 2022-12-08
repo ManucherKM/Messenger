@@ -30,7 +30,7 @@ const VKbtn = ({ styleText = "", styleWrapper = "", getResult = () => { } }) => 
             }
             getResult(result)
         }
-    }, [])
+    }, [getResult])
 
     return (
         <div

@@ -1,6 +1,9 @@
 //Библиотеки
 import { useState, useEffect } from "react";
 
+//Компоненты
+import List from "../List/List"
+
 const DropDownList = ({ list, click }) => {
 
     //При изменении списка проверяем его на пустоту
@@ -49,19 +52,22 @@ const DropDownList = ({ list, click }) => {
                         onClick={blockUploadVisible}
                         className="border rounded-xl bg-white border-gray-300 mt-2 relative z-20 dark:bg-whiteDark dark:border-gray-600"
                     >
-                        {list.map(item =>
-                            <div
-                                onClick={() => newSelected(item.text)}
-                                key={item.id}
-                                className="cursor-pointer hover:opacity-60"
-                            >
-                                <div className="p-3">
-                                    <span className="select-none whitespace-nowrap dark:text-white">
-                                        {item.text}
-                                    </span>
+                        <List
+                            mass={list}
+                            render={item =>
+                                <div
+                                    onClick={() => newSelected(item.text)}
+                                    key={item.id}
+                                    className="cursor-pointer hover:opacity-60"
+                                >
+                                    <div className="p-3">
+                                        <span className="select-none whitespace-nowrap dark:text-white">
+                                            {item.text}
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
-                        )}
+                            }
+                        />
                     </div>
                 }
                 {visible &&

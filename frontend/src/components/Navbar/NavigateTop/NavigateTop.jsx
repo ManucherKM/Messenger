@@ -1,7 +1,6 @@
 //Библиотеки
 import { Link } from "react-router-dom"
 import { observer } from "mobx-react-lite"
-import { useEffect } from "react"
 
 //Компоненты
 import UserLogo from "../../UserLogo/UserLogo"
@@ -14,11 +13,7 @@ import userControll from "../../../store/user"
 
 const NavigateTop = observer(() => {
 
-    let userAvatar = userControll.info.avatar
-
-    useEffect(() => {
-        userAvatar = userControll.info.avatar
-    }, [userControll.info.avatar])
+    const userAvatar = userControll.info.avatar;
 
     return (
         <div className='mx-[11px] mt-[27px] border-b border-black/[.1] dark:border-white/[.3]'>

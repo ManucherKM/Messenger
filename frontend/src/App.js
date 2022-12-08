@@ -1,21 +1,27 @@
+//Библиотеки
 import { Route, Routes } from 'react-router-dom'
 import { observer } from 'mobx-react-lite'
 import { useEffect } from 'react'
 
+//Компоненты
 import LoginIndex from './pages/Login/LoginIndex'
 import Panel from './pages/Panel/Panel'
 import RegisterIndex from './pages/Register/RegisterIndex'
 import SettingIndex from './pages/Setting/SettingIndex'
-
-import userController from './store/user'
-import checkTheme from './utils/themeCheck'
 import Profile from './pages/Profile/Profile'
 
+//Утилиты
+import userController from './store/user'
+import checkTheme from './utils/themeCheck'
+
 const App = observer(() => {
+
+  const theme = userController.config.darkTheme
+
   //Если цветовая тема меняется - перерендериваем все приложение
   useEffect(() => {
     checkTheme()
-  }, [userController.config.darkTheme])
+  }, [theme])
   return (
     <div>
       <Routes>

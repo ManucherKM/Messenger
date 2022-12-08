@@ -1,10 +1,10 @@
 //Библиотеки
 import { Link } from "react-router-dom"
 
-const Btn = ({ children, redirect, styles = "", click = () => { } }) => {
+const Btn = ({ children, redirect, styles = "", onClick = () => { } }) => {
 
     function start() {
-        click()
+        onClick()
     }
 
     return (

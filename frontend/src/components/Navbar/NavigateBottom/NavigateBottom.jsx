@@ -1,5 +1,7 @@
-//Компоненты
+//Утилиты
 import userControll from "../../../store/user"
+
+//Компоненты
 import Btn from "../Btn/Btn"
 
 const NavigateBottom = () => {
@@ -11,7 +13,7 @@ const NavigateBottom = () => {
     return (
         <div>
             <Btn
-                click={exit}
+                onClick={exit}
                 styles={"hover:border-gray-300 hover:drop-shadow-none dark:hover:border-gray-500"}
                 redirect={"/"}
             >

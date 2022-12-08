@@ -41,12 +41,11 @@ const Form = observer(({ setLoading }) => {
         navigate("/chat")
     }
 
-    function updateBtn() {
-        const isCorrect = isCorrectEmail && isCorrectPassword
-        setDisableBtn(isCorrect ? false : true)
-    }
-
     useEffect(() => {
+        function updateBtn() {
+            const isCorrect = isCorrectEmail && isCorrectPassword
+            setDisableBtn(isCorrect ? false : true)
+        }
         updateBtn()
     }, [isCorrectEmail, isCorrectPassword])
 
@@ -73,10 +72,10 @@ const Form = observer(({ setLoading }) => {
             </div>
             <Button
                 text={"Вход"}
-                click={login}
+                onClick={login}
                 type={"submit"}
                 disabled={disableBtn}
-                style="mt-5"
+                styles={"mt-5"}
             />
             <Link
                 className="text-green text-sm font-medium mt-3 ml-auto hover:opacity-60"

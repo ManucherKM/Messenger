@@ -1,3 +1,4 @@
+//Библиотеки
 import { makeAutoObservable } from "mobx"
 
 class chatController {

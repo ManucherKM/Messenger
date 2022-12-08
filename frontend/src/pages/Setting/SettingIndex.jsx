@@ -85,8 +85,8 @@ const SettingIndex = observer(() => {
                         <div className="mt-10 mb-10">
                             <Button
                                 text="Сохранить"
-                                style="px-10 mt-5"
-                                click={saveSatting}
+                                styles="px-10 mt-5"
+                                onClick={saveSatting}
                             />
                         </div>
                     </div>
