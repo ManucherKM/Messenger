@@ -8,7 +8,7 @@ class chatController {
             chatId: 23423425441234,
             friend: {
                 id: 1,
-                name: "Message",
+                name: "Tom Smith",
                 isOnline: true,
                 isTyping: false,
                 urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
@@ -29,10 +29,10 @@ class chatController {
             chatId: 4234,
             friend: {
                 id: 1,
-                name: "I am",
+                name: "Ivan Petrov",
                 isOnline: true,
                 isTyping: false,
-                urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+                urlImg: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
             },
             user: {
                 noCheck: 5,
@@ -50,10 +50,10 @@ class chatController {
             chatId: 234234,
             friend: {
                 id: 1,
-                name: "I am",
+                name: "Aaron Orv",
                 isOnline: true,
                 isTyping: false,
-                urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+                urlImg: "https://plus.unsplash.com/premium_photo-1667511131806-5907723694fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
             },
             user: {
                 noCheck: 5,
@@ -71,10 +71,10 @@ class chatController {
             chatId: 56757,
             friend: {
                 id: 1,
-                name: "I am",
+                name: "Benjamin Fr",
                 isOnline: true,
                 isTyping: false,
-                urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+                urlImg: "https://images.unsplash.com/photo-1581382575275-97901c2635b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
             },
             user: {
                 noCheck: 5,
@@ -92,10 +92,10 @@ class chatController {
             chatId: 768,
             friend: {
                 id: 1,
-                name: "I am",
+                name: "Antonio Q",
                 isOnline: true,
                 isTyping: false,
-                urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+                urlImg: "https://images.unsplash.com/photo-1480429370139-e0132c086e2a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
             },
             user: {
                 noCheck: 5,
@@ -113,10 +113,10 @@ class chatController {
             chatId: 567,
             friend: {
                 id: 1,
-                name: "I am",
+                name: "Andrew G",
                 isOnline: true,
                 isTyping: false,
-                urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+                urlImg: "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
             },
             user: {
                 noCheck: 5,
@@ -134,10 +134,10 @@ class chatController {
             chatId: 234651435245,
             friend: {
                 id: 1,
-                name: "I am",
+                name: "Alex X",
                 isOnline: true,
                 isTyping: false,
-                urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+                urlImg: "https://images.unsplash.com/photo-1548449112-96a38a643324?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG1hbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
             },
             user: {
                 noCheck: 5,
@@ -155,7 +155,7 @@ class chatController {
             chatId: 345676583,
             friend: {
                 id: 1,
-                name: "I am",
+                name: "Albert T",
                 isOnline: true,
                 isTyping: false,
                 urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
@@ -176,10 +176,10 @@ class chatController {
             chatId: 980980980,
             friend: {
                 id: 1,
-                name: "I am",
+                name: "Aidan N",
                 isOnline: true,
                 isTyping: false,
-                urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+                urlImg: "https://images.unsplash.com/photo-1590086782957-93c06ef21604?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG1hbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
             },
             user: {
                 noCheck: 5,
@@ -197,10 +197,10 @@ class chatController {
             chatId: 345543,
             friend: {
                 id: 1,
-                name: "I am",
+                name: "Alan N",
                 isOnline: true,
                 isTyping: false,
-                urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+                urlImg: "https://images.unsplash.com/photo-1488161628813-04466f872be2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fG1hbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
             },
             user: {
                 noCheck: 5,
@@ -218,10 +218,10 @@ class chatController {
             chatId: 321213321,
             friend: {
                 id: 1,
-                name: "I am",
+                name: "Blake E",
                 isOnline: true,
                 isTyping: false,
-                urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+                urlImg: "https://images.unsplash.com/photo-1581803118522-7b72a50f7e9f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fG1hbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
             },
             user: {
                 noCheck: 5,
@@ -239,10 +239,10 @@ class chatController {
             chatId: 354321342,
             friend: {
                 id: 1,
-                name: "I am",
+                name: "Christopher R",
                 isOnline: true,
                 isTyping: false,
-                urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+                urlImg: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fG1hbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
             },
             user: {
                 noCheck: 5,
@@ -260,10 +260,10 @@ class chatController {
             chatId: 5234345345,
             friend: {
                 id: 1,
-                name: "I am",
+                name: "Douglas S",
                 isOnline: true,
                 isTyping: false,
-                urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+                urlImg: "https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fG1hbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
             },
             user: {
                 noCheck: 5,
@@ -281,10 +281,10 @@ class chatController {
             chatId: 12341234,
             friend: {
                 id: 1,
-                name: "I am",
+                name: "Evan V",
                 isOnline: true,
                 isTyping: false,
-                urlImg: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+                urlImg: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8bWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
             },
             user: {
                 noCheck: 0,
