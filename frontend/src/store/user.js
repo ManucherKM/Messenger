@@ -6,7 +6,7 @@ class User {
     isRegister = true
 
     config = {
-        darkTheme: true
+        darkTheme: false
     }
 
     token = {}
