@@ -15,7 +15,7 @@ class Profile {
         const data = {
             id: Date.now(),
             fullName: "Manucher Kurbanov",
-            wallpaper: "https://img1.akspic.ru/crops/8/1/9/7/6/167918/167918-anime_pejzazh-anime-pejzazhnaya_zhivopis-zhivopis-art-3840x2160.jpg",
+            wallpaper: "https://images.unsplash.com/photo-1669058665299-d6f81125dce7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
             photo: "https://images.unsplash.com/photo-1555169062-013468b47731?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
             friends: [
                 {
