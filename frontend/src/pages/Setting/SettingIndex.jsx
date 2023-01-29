@@ -49,38 +49,6 @@ const SettingIndex = observer(() => {
                                 text={"Прочее. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, asperiores omnis magnam impedit modi fugiat."}
                                 setCheckbox={setExample}
                             />
-                            <SettingItem
-                                text={"Прочее. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, asperiores omnis magnam impedit modi fugiat."}
-                                setCheckbox={setExample}
-                            />
-                            <SettingItem
-                                text={"Прочее. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, asperiores omnis magnam impedit modi fugiat."}
-                                setCheckbox={setExample}
-                            />
-                            <SettingItem
-                                text={"Прочее. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, asperiores omnis magnam impedit modi fugiat."}
-                                setCheckbox={setExample}
-                            />
-                            <SettingItem
-                                text={"Прочее. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, asperiores omnis magnam impedit modi fugiat."}
-                                setCheckbox={setExample}
-                            />
-                            <SettingItem
-                                text={"Прочее. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, asperiores omnis magnam impedit modi fugiat."}
-                                setCheckbox={setExample}
-                            />
-                            <SettingItem
-                                text={"Прочее. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, asperiores omnis magnam impedit modi fugiat."}
-                                setCheckbox={setExample}
-                            />
-                            <SettingItem
-                                text={"Прочее. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, asperiores omnis magnam impedit modi fugiat."}
-                                setCheckbox={setExample}
-                            />
-                            <SettingItem
-                                text={"Прочее. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, asperiores omnis magnam impedit modi fugiat."}
-                                setCheckbox={setExample}
-                            />
                         </div>
                         <div className="mt-10 mb-10">
                             <Button
