@@ -73,6 +73,39 @@ body {
 	margin-left: auto;
 }
 
+/* NavBar mobile*/
+@media (max-width: 768px) {
+	.slide-right {
+		animation: slide-right 200ms normal linear;
+	}
+
+	@keyframes slide-right {
+		from {
+			margin-left: -80px;
+			opacity: 0;
+		}
+		to {
+			margin-left: 0;
+			opacity: 1;
+		}
+	}
+
+	.slide-left {
+		animation: slide-left 200ms normal linear forwards;
+	}
+
+	@keyframes slide-left {
+		from {
+			margin-left: 0;
+			opacity: 1;
+		}
+		to {
+			margin-left: -80px;
+			opacity: 0;
+		}
+	}
+}
+
 @font-face {
 	font-family: 'SF Pro Text';
 	src: url('./assets/Fonts/SF-light.ttf') format('truetype');

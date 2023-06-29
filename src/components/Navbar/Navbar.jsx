@@ -9,15 +9,19 @@ const Navbar = () => {
 
 	return (
 		<>
-			{touch && (
-				<div className="w-20 h-[100vh] flex flex-col justify-between bg-gray-100 dark:bg-dark">
-					<div>
-						<NavigateTop />
-						<NavigateCenter />
-					</div>
-					<NavigateBottom />
+			<div
+				className={[
+					'w-20 h-[100vh] flex flex-col justify-between bg-gray-100 dark:bg-dark',
+					touch && 'slide-right',
+					!touch && 'slide-left',
+				].join(' ')}
+			>
+				<div>
+					<NavigateTop />
+					<NavigateCenter />
 				</div>
-			)}
+				<NavigateBottom />
+			</div>
 		</>
 	)
 }
