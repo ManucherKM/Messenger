@@ -11,7 +11,7 @@
 
 ## Web application
 
-[Messenger](https://messenger-frontend-ivory.vercel.app)
+[Messenger](https://messenger-zeta-ruby.vercel.app/)
 
 ## Preview
 
