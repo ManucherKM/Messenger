@@ -16,7 +16,7 @@ const ItemMessage = ({
 
 	return (
 		<div className="flex">
-			<div className="relative w-1/4">
+			<div className="relative w-1/4 mint:w-[15%] phon:w-1/4">
 				<img className="w-12 h-12 object-cover rounded-full" src={img} alt="user" />
 				{isOnline && (
 					<svg
@@ -31,14 +31,14 @@ const ItemMessage = ({
 					</svg>
 				)}
 			</div>
-			<div className="w-2/4 flex flex-col justify-between">
+			<div className="w-2/4 mint:w-3/5 phon:w-2/4 flex flex-col justify-between">
 				<span className="text-base font-medium opacity-80 text-black dark:text-white">{name}</span>
 				{!isTyping && (
 					<span className="text-base font-normal opacity-50 text-black dark:text-white">{visibleMessage}</span>
 				)}
 				{isTyping && <span className="text-base font-normal text-green">... is typing</span>}
 			</div>
-			<div className="w-1/4 flex flex-col items-end justify-between">
+			<div className="w-1/4 mint:w-[25%] phon:w-1/4 flex flex-col items-end justify-between">
 				<p className="text-base text-right opacity-70 text-black dark:text-white">{time}</p>
 				{!isCheckMe && (
 					<div className="bg-green rounded-full w-5 h-5 flex-center">

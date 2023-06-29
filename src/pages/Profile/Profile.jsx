@@ -1,5 +1,5 @@
-import { useEffect,useState } from 'react'
-import { Link,useParams } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Link, useParams } from 'react-router-dom'
 import Button from '../../components/Button/Button'
 import Navbar from '../../components/Navbar/Navbar'
 import Spinner from '../../components/Spinner/Spinner'
@@ -110,7 +110,9 @@ const Profile = () => {
 								</div>
 								<div className="flex justify-between mint:flex-col mint:p-0 pl-5 pt-5 w-4/5">
 									<div>
-										<p className="text-2xl font-bold cursor-default dark:text-white mint:text-lg mint:text-center">{user.fullName}</p>
+										<p className="text-2xl font-bold cursor-default dark:text-white mint:text-lg mint:text-center">
+											{user.fullName}
+										</p>
 										<div onClick={moreInfo} className="flex items-center mint:justify-center mt-2">
 											<div className="mr-2">
 												<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -126,7 +128,7 @@ const Profile = () => {
 										</div>
 									</div>
 									<div>
-										<div className='mint:flex mint:justify-center mint:mt-2'>
+										<div className="mint:flex mint:justify-center mint:mt-2">
 											{isUser ? (
 												<Button text="Редактировать профиль" onClick={updateProfile} styles="px-4 py-2" />
 											) : (
@@ -136,7 +138,7 @@ const Profile = () => {
 									</div>
 								</div>
 							</div>
-							<div className='mint:px-5 mint:mt-2'>
+							<div className="mint:px-5 mint:mt-2">
 								<p className="text-2xl font-medium dark:text-white mint:text-lg">Друзья</p>
 								<div className="flex mt-10 mb-10 gap-10 flex-wrap mint:gap-3 mint:justify-center">
 									{isLoadingFriend ? (
@@ -158,7 +160,7 @@ const Profile = () => {
 									{}
 								</div>
 								{!isFriendMore && (
-									<div className="mb-10 flex-center">
+									<div className="mb-10 flex-center mint:mb-16">
 										<Button text="Смотреть еще" onClick={updateFriend} styles="px-4 py-2" />
 									</div>
 								)}

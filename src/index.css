@@ -69,6 +69,10 @@ body {
 	fill: #27ae60;
 }
 
+.backChat:hover .backSvgChat {
+	fill: #27ae60;
+}
+
 .checkbox {
 	transition: all 300ms;
 }
@@ -81,7 +85,7 @@ body {
 /* NavBar mobile*/
 @media (max-width: 768px) {
 	.slide-right {
-		animation: slide-right 200ms normal linear;
+		animation: slide-right 100ms normal linear;
 	}
 
 	@keyframes slide-right {
@@ -96,7 +100,7 @@ body {
 	}
 
 	.slide-left {
-		animation: slide-left 200ms normal linear forwards;
+		animation: slide-left 100ms normal linear forwards;
 	}
 
 	@keyframes slide-left {

@@ -18,7 +18,7 @@ export function useSwipeRight() {
 	window.addEventListener('touchmove', handlerTouchMove)
 
 	function checkSwipe() {
-		if (touchEnd - touchStart > 100) {
+		if (touchEnd - touchStart > 120) {
 			setTouch(true)
 		} else {
 			setTouch(false)
