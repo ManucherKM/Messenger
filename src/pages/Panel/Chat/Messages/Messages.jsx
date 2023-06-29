@@ -40,7 +40,7 @@ const Messages = observer(() => {
 					<span className="text-xl text-green">Похоже что у вас нет ни одного сообщения</span>
 				</div>
 			) : (
-				<div className="w-full h-[calc(100vh-152px)] mint:h-[calc(100vh-209px)] flex flex-col justify-end overflow-auto bg-gray-100 dark:bg-whiteDark">
+				<div className="w-full h-[calc(100vh-152px)] mint:h-[calc(100vh-208px)] flex flex-col justify-end overflow-auto bg-gray-100 dark:bg-whiteDark">
 					{isContextMenu && <ContextMenu setIsRender={setIsContextMenu} x={x} y={y} messageId={selectMessage} />}
 					<div ref={chatMessages} className="px-5 overflow-y-scroll scroll">
 						{listMessage.map(item => (
