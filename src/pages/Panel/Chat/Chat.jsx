@@ -13,6 +13,7 @@ import chatController from '../../../store/chat'
 
 const Chat = observer(() => {
 	const [isRender, setIsRender] = useState(chatController.chatRender.chatId !== undefined ? true : false)
+	const [files, setFiles] = useState([])
 
 	useEffect(() => {
 		setIsRender(chatController.chatRender.chatId === undefined ? false : true)
@@ -58,7 +59,12 @@ const Chat = observer(() => {
 							<TypeMessage dropFile={dropFile} />
 						</div>
 						<div className="absolute top-0 z-10 w-full h-full bg-black/[.4] dark:bg-white/[.1]">
-							<DropZone uploadDropZone={dropFile} stylesWrapper="flex-center h-full" stylesDropZone="w-3/4 h-[500px]" />
+							<DropZone
+								getFiles={setFiles}
+								uploadDropZone={dropFile}
+								stylesWrapper="flex-center h-full"
+								stylesDropZone="w-3/4 h-[500px]"
+							/>
 						</div>
 					</div>
 				)}

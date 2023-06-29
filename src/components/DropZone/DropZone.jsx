@@ -1,5 +1,20 @@
-const DropZone = ({ stylesWrapper = '', stylesDropZone = '', uploadDropZone }) => {
+import { useState } from 'react'
+
+const DropZone = ({ stylesWrapper = '', stylesDropZone = '', uploadDropZone, getFiles }) => {
+	const [isDragOver, setIsDragOver] = useState(false)
+
 	function clickWrapperDark() {
+		uploadDropZone()
+	}
+
+	function changeHandler(e) {
+		getFiles(e.target.files)
+		uploadDropZone()
+	}
+
+	function dropHandler(e) {
+		e.preventDefault()
+		getFiles(e.dataTransfer.files)
 		uploadDropZone()
 	}
 
@@ -10,8 +25,17 @@ const DropZone = ({ stylesWrapper = '', stylesDropZone = '', uploadDropZone }) =
 				onClick={e => e.stopPropagation()}
 			>
 				<label
+					onDragOver={e => {
+						e.preventDefault()
+						setIsDragOver(true)
+					}}
+					onDragLeave={() => setIsDragOver(false)}
+					onDrop={dropHandler}
 					htmlFor="dropzone-file"
-					className="flex-center flex-col w-full h-full border-2 border-green border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-dark hover:bg-gray-100 dark:border-green dark:hover:border-gray-500 dark:hover:bg-gray-800"
+					className={[
+						'flex-center flex-col w-full h-full border-2 border-green border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-dark hover:bg-gray-100 dark:border-green dark:hover:border-gray-500 dark:hover:bg-gray-800',
+						isDragOver && 'opac',
+					].join(' ')}
 				>
 					<div className="flex flex-col items-center justify-center pt-5 pb-6">
 						<svg
@@ -33,7 +57,7 @@ const DropZone = ({ stylesWrapper = '', stylesDropZone = '', uploadDropZone }) =
 							<span className="font-semibold">Click to upload</span> or drag and drop
 						</p>
 					</div>
-					<input multiple id="dropzone-file" type="file" className="hidden" />
+					<input onChange={changeHandler} multiple id="dropzone-file" type="file" className="hidden" />
 				</label>
 			</div>
 		</div>

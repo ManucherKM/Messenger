@@ -115,6 +115,11 @@ body {
 	}
 }
 
+/* Drag on Drop */
+.opac {
+	opacity: 0.8;
+}
+
 @font-face {
 	font-family: 'SF Pro Text';
 	src: url('./assets/Fonts/SF-light.ttf') format('truetype');
