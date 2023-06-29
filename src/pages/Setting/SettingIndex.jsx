@@ -7,14 +7,10 @@ import SettingItem from '../../components/SettingItem/SettingItem'
 import userController from '../../store/user'
 
 const SettingIndex = observer(() => {
-	const [darkTheme, setDarkTheme] = useState(false)
-	//Прочие настройки
-	const [example, setExample] = useState(false)
+	const [darkTheme, setDarkTheme] = useState(userController.config.darkTheme)
 
 	function saveSatting() {
-		const config = {
-			darkTheme: darkTheme,
-		}
+		const config = { darkTheme }
 		userController.updateConfig(config)
 	}
 
@@ -26,8 +22,8 @@ const SettingIndex = observer(() => {
 					<div className="mt-5">
 						<h2 className="title">Настройки</h2>
 						<div>
-							<SettingItem isCheck={userController.config.darkTheme} text={'Темная тема'} setCheckbox={setDarkTheme} />
-							<SettingItem text={'Прочие настройки'} setCheckbox={setExample} />
+							<SettingItem isCheck={darkTheme} text={'Темная тема'} setCheckbox={setDarkTheme} />
+							<SettingItem text={'Прочие настройки'} setCheckbox={() => {}} />
 						</div>
 						<div className="mt-5 mb-10">
 							<Button text="Сохранить" styles="px-10 mt-5" onClick={saveSatting} />

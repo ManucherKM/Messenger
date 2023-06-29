@@ -1,17 +1,19 @@
 //Библиотеки
 import { toJS } from 'mobx'
 import { observer } from 'mobx-react-lite'
-import { useEffect,useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 //Компоненты
 import UserLogo from '../../../../components/UserLogo/UserLogo'
 
 //Утилиты
+import { useCheckModileDevice } from '../../../../hooks/useCheckModileDevice'
 import chatController from '../../../../store/chat'
 
-
 const FriendPanel = observer(() => {
+	const isMobile = useCheckModileDevice()
+
 	const navigate = useNavigate()
 
 	const [friend, setFriend] = useState(
@@ -22,7 +24,7 @@ const FriendPanel = observer(() => {
 		navigate(`/profile/${friend.id}`)
 	}
 
-	function clearChatRener(){
+	function clearChatRener() {
 		chatController.updateChatRender(null)
 	}
 
@@ -76,17 +78,19 @@ const FriendPanel = observer(() => {
 						</svg>
 					</div>
 				</div>
-				<div onClick={clearChatRener} className="m-auto">
-					<div className="p-4 mint:p-3 rounded-xl cursor-pointer hover:bg-gray-100 infoChat dark:hover:bg-gray-600 backChat">
-						<svg width="25" height="19" viewBox="0 0 25 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path
-								className="backSvgChat"
-								d="M24.0864 10.1976C24.3412 9.94271 24.4844 9.59705 24.4844 9.23662C24.4844 8.8762 24.3412 8.53053 24.0864 8.27563L16.3971 0.58635C16.2717 0.456528 16.1218 0.352977 15.9559 0.28174C15.7901 0.210503 15.6117 0.173006 15.4312 0.171438C15.2508 0.16987 15.0718 0.204261 14.9047 0.272606C14.7377 0.34095 14.5859 0.441879 14.4583 0.569502C14.3307 0.697126 14.2297 0.848889 14.1614 1.01594C14.0931 1.18298 14.0587 1.36197 14.0602 1.54245C14.0618 1.72293 14.0993 1.90129 14.1705 2.06712C14.2418 2.23296 14.3453 2.38294 14.4751 2.50833L19.8442 7.87737L1.84363 7.87737C1.48313 7.87737 1.1374 8.02058 0.882489 8.27549C0.62758 8.5304 0.484375 8.87613 0.484375 9.23662C0.484375 9.59712 0.62758 9.94285 0.882489 10.1978C1.1374 10.4527 1.48313 10.5959 1.84363 10.5959L19.8442 10.5959L14.4751 15.9649C14.2275 16.2213 14.0905 16.5646 14.0936 16.921C14.0967 17.2774 14.2397 17.6183 14.4917 17.8703C14.7437 18.1224 15.0846 18.2653 15.441 18.2684C15.7974 18.2715 16.1408 18.1345 16.3971 17.8869L24.0864 10.1976Z"
-								fill="#BBBBBB"
-							/>
-						</svg>
+				{isMobile && (
+					<div onClick={clearChatRener} className="m-auto">
+						<div className="p-4 mint:p-3 rounded-xl cursor-pointer hover:bg-gray-100 infoChat dark:hover:bg-gray-600 backChat">
+							<svg width="25" height="19" viewBox="0 0 25 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path
+									className="backSvgChat"
+									d="M24.0864 10.1976C24.3412 9.94271 24.4844 9.59705 24.4844 9.23662C24.4844 8.8762 24.3412 8.53053 24.0864 8.27563L16.3971 0.58635C16.2717 0.456528 16.1218 0.352977 15.9559 0.28174C15.7901 0.210503 15.6117 0.173006 15.4312 0.171438C15.2508 0.16987 15.0718 0.204261 14.9047 0.272606C14.7377 0.34095 14.5859 0.441879 14.4583 0.569502C14.3307 0.697126 14.2297 0.848889 14.1614 1.01594C14.0931 1.18298 14.0587 1.36197 14.0602 1.54245C14.0618 1.72293 14.0993 1.90129 14.1705 2.06712C14.2418 2.23296 14.3453 2.38294 14.4751 2.50833L19.8442 7.87737L1.84363 7.87737C1.48313 7.87737 1.1374 8.02058 0.882489 8.27549C0.62758 8.5304 0.484375 8.87613 0.484375 9.23662C0.484375 9.59712 0.62758 9.94285 0.882489 10.1978C1.1374 10.4527 1.48313 10.5959 1.84363 10.5959L19.8442 10.5959L14.4751 15.9649C14.2275 16.2213 14.0905 16.5646 14.0936 16.921C14.0967 17.2774 14.2397 17.6183 14.4917 17.8703C14.7437 18.1224 15.0846 18.2653 15.441 18.2684C15.7974 18.2715 16.1408 18.1345 16.3971 17.8869L24.0864 10.1976Z"
+									fill="#BBBBBB"
+								/>
+							</svg>
+						</div>
 					</div>
-				</div>
+				)}
 			</div>
 		</div>
 	)

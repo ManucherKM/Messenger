@@ -53,12 +53,12 @@ const Profile = () => {
 	}
 
 	function moreInfo() {
-		console.log('Подрбная информация')
+		console.log('Подробная информация')
 	}
 
 	useEffect(() => {
 		clearInfo()
-		if (id == userController.info.id) {
+		if (id === userController.info.id) {
 			setIsUser(true)
 		}
 		;(async () => {

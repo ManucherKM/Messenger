@@ -28,7 +28,12 @@ const CheckBox = ({ checked, isCheck = false }) => {
 	return (
 		<label className={`w-16 rounded-full p-1 relative cursor-pointer ${styleBg}`}>
 			<span className={`w-5 h-5 rounded-full bg-white flex flex-col ${styleElips}`}></span>
-			<input onChange={changeHandler} type="checkbox" className="absolute top-0 left-0 w-0 h-0 opacity-0" />
+			<input
+				checked={isCheck}
+				onChange={changeHandler}
+				type="checkbox"
+				className="absolute top-0 left-0 w-0 h-0 opacity-0"
+			/>
 		</label>
 	)
 }

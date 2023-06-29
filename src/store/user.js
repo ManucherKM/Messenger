@@ -5,7 +5,7 @@ class User {
 	isRegister = true
 
 	config = {
-		darkTheme: false,
+		darkTheme: localStorage.getItem('theme') === 'dark',
 	}
 
 	token = {}
