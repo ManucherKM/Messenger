@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useEffect,useState } from 'react'
+import { Link,useParams } from 'react-router-dom'
 import Button from '../../components/Button/Button'
 import Navbar from '../../components/Navbar/Navbar'
 import Spinner from '../../components/Spinner/Spinner'
@@ -83,31 +83,35 @@ const Profile = () => {
 	return (
 		<div className="flex">
 			<Navbar />
-			<div className="w-[calc(100vw-80px)] h-[100vh] scroll bg-white dark:bg-dark">
+			<div className="w-[calc(100vw-80px)] h-[100vh] scroll bg-white dark:bg-dark mint:w-full">
 				{isLoading ? (
 					<div className="w-full h-full flex-center">
 						<Spinner />
 					</div>
 				) : (
-					<div>
-						<div className="w-full h-[400px] bg-no-repeat bg-center bg-cover" style={styleWallpaper}>
+					<>
+						<div className="w-full h-[400px] mint:h-[200px] bg-no-repeat bg-center bg-cover" style={styleWallpaper}>
 							{isUser && (
 								<div className="flex justify-end p-2">
 									<Button text="Изменить" onClick={() => {}} styles="px-4 py-2 mt-5" />
 								</div>
 							)}
 						</div>
-						<div className="w-[1170px] mx-auto">
-							<div className=" flex ">
-								<div className="w-1/5">
-									<div className="bg-white -translate-y-20 h-44 w-44 flex-center rounded-full dark:bg-dark">
-										<img className="w-40 h-40 rounded-full object-cover" src={user.photo} alt="photo" />
+						<div className="w-[1170px] mx-auto mint:w-full">
+							<div className="flex mint:flex-col mint:items-center mint:px-5">
+								<div className="w-1/5 mint:w-full mint:h-[60px]">
+									<div className="bg-white -translate-y-20 mint:-translate-y-12 h-44 w-44 mint:h-24 mint:w-24 flex-center rounded-full mint:m-auto dark:bg-dark">
+										<img
+											className="w-40 h-40 rounded-full object-cover mint:w-[90px] mint:h-[90px]"
+											src={user.photo}
+											alt="photo"
+										/>
 									</div>
 								</div>
-								<div className="flex justify-between pl-5 pt-5 w-4/5">
+								<div className="flex justify-between mint:flex-col mint:p-0 pl-5 pt-5 w-4/5">
 									<div>
-										<p className="text-2xl font-bold cursor-default dark:text-white">{user.fullName}</p>
-										<div onClick={moreInfo} className="flex items-center mt-2">
+										<p className="text-2xl font-bold cursor-default dark:text-white mint:text-lg mint:text-center">{user.fullName}</p>
+										<div onClick={moreInfo} className="flex items-center mint:justify-center mt-2">
 											<div className="mr-2">
 												<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 													<path
@@ -122,7 +126,7 @@ const Profile = () => {
 										</div>
 									</div>
 									<div>
-										<div>
+										<div className='mint:flex mint:justify-center mint:mt-2'>
 											{isUser ? (
 												<Button text="Редактировать профиль" onClick={updateProfile} styles="px-4 py-2" />
 											) : (
@@ -132,9 +136,9 @@ const Profile = () => {
 									</div>
 								</div>
 							</div>
-							<div>
-								<p className="text-2xl font-medium dark:text-white">Друзья</p>
-								<div className="flex mt-10 mb-10 gap-10 flex-wrap">
+							<div className='mint:px-5 mint:mt-2'>
+								<p className="text-2xl font-medium dark:text-white mint:text-lg">Друзья</p>
+								<div className="flex mt-10 mb-10 gap-10 flex-wrap mint:gap-3 mint:justify-center">
 									{isLoadingFriend ? (
 										<div className="w-full h-80 flex-center">
 											<Spinner />
@@ -142,9 +146,9 @@ const Profile = () => {
 									) : (
 										friends.map(item => (
 											<Link key={item.id} to={`/profile/${item.id}`}>
-												<div className="border rounded-xl p-5 flex-center flex-col hover:opacity-60 dark:bg-whiteDark dark:border-black/[.0]">
-													<img className="w-28 h-28" src={item.photo} alt="photo" />
-													<span className="w-full text-center text-lg font-medium mt-2 dark:text-white">
+												<div className="border rounded-xl p-5 flex-center flex-col hover:opacity-60 dark:bg-whiteDark dark:border-black/[.0] select-none">
+													<img className="w-28 h-28 mint:w-10 mint:h-10" src={item.photo} alt="photo" />
+													<span className="w-full text-center text-lg font-medium mt-2 dark:text-white mint:text-sm">
 														{item.fullName}
 													</span>
 												</div>
@@ -160,7 +164,7 @@ const Profile = () => {
 								)}
 							</div>
 						</div>
-					</div>
+					</>
 				)}
 			</div>
 		</div>
