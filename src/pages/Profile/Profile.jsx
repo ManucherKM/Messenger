@@ -160,10 +160,11 @@ const Profile = () => {
 									{}
 								</div>
 								{!isFriendMore && (
-									<div className="mb-10 flex-center mint:mb-16">
+									<div className="mb-10 flex-center">
 										<Button text="Смотреть еще" onClick={updateFriend} styles="px-4 py-2" />
 									</div>
 								)}
+								<div className={'pb-16'}></div>
 							</div>
 						</div>
 					</>
