@@ -36,7 +36,7 @@ const Messages = observer(() => {
 	return (
 		<>
 			{listMessage.length === 0 ? (
-				<div className="w-full h-[calc(100vh-152px)] bg-gray-100 dark:bg-whiteDark flex-center">
+				<div className="w-full h-[calc(100vh-152px)] mint:h-[calc(90vh-152px)] bg-gray-100 dark:bg-whiteDark flex-center">
 					<span className="text-xl text-green">Похоже что у вас нет ни одного сообщения</span>
 				</div>
 			) : (

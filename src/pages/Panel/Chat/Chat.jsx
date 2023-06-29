@@ -40,11 +40,8 @@ const Chat = observer(() => {
 						</div>
 						<div>
 							<Messages />
-
-							123123123
 						</div>
 						<div>
-							123123
 							<TypeMessage dropFile={dropFile} />
 						</div>
 					</div>
