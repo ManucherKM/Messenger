@@ -10,7 +10,7 @@ const VKbtn = ({ styleText = '', styleWrapper = '', getResult = () => {} }) => {
 	async function login() {
 		params = {
 			client_id: '51481402',
-			redirect_uri: 'https://messenger-navy.vercel.app/',
+			redirect_uri: 'http://localhost:3000',
 			display: 'page',
 		}
 
