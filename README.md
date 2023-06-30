@@ -11,7 +11,7 @@
 
 ## Web application
 
-[Messenger](https://messenger-rosy-pi.vercel.app/)
+[Messenger](https://messenger-navy.vercel.app/)
 
 ## Preview
 
